@@ -1,0 +1,43 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency locks
+package-lock.json
+
+# Build output
+build/
+dist/
+*.tsbuildinfo
+
+# Vite cache
+.vite/
+vite.svg
+
+# Logs
+logs/
+*.log
+
+# Env files
+.env*
+!.env.example
+
+# Editor / OS
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+
+# Coverage / tests (add when tests are introduced)
+coverage/
+.junit/
+.tap/
+
+# Misc
+*.local
+*.swp
+*.swo
