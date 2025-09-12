@@ -1,4 +1,5 @@
 import React from 'react'
+import heroImage from '../../assets/hero-image.jpg'
 import { Button } from '../ui/button'
 import { ArrowDown } from 'lucide-react'
 import { ImageWithFallback } from '../figma/ImageWithFallback'
@@ -21,7 +22,7 @@ export function Hero() {
             <div className='relative inline-block'>
               <div className='w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/10 shadow-lg'>
                 <ImageWithFallback
-                  src='https://images.unsplash.com/photo-1576558656222-ba66febe3dec?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBoZWFkc2hvdCUyMHBvcnRyYWl0fGVufDF8fHx8MTc1NzYyNzgzNXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral'
+                  src={heroImage}
                   alt='Profile'
                   className='w-full h-full object-cover'
                 />
