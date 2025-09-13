@@ -99,7 +99,10 @@ const AboutMe = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <Badge variant='secondary' className='px-4 py-2 text-sm'>
+                <Badge
+                  variant='secondary'
+                  className='px-4 py-2 text-sm transition-shadow duration-300 hover:shadow-lg'
+                >
                   {skill}
                 </Badge>
               </motion.div>
