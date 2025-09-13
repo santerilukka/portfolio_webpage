@@ -73,6 +73,8 @@ const Education = () => {
         </motion.div>
 
         <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>
+          {' '}
+          {/*<div className='grid grid-cols-1 md:grid-cols-2 gap-8 justify-center'>*/}
           {educationData.map((edu, index) => (
             <motion.div
               key={edu.degree}
