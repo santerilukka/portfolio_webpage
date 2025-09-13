@@ -1,150 +1,143 @@
 import React from 'react'
-import { Card } from '../ui/card'
+import { motion } from 'motion/react'
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { GraduationCap, Calendar, MapPin } from 'lucide-react'
 
-export function Education() {
-  const education = [
+const Education = () => {
+  const educationData = [
     {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'State University',
-      location: 'City, State',
+      degree: 'Bachelor of Science in Information Technology',
+      school: 'Tech University',
+      location: 'New York, NY',
       period: '2022 - 2026',
-      gpa: '3.8/4.0',
       status: 'In Progress',
-      coursework: [
-        'Data Structures & Algorithms',
+      gpa: '3.8/4.0',
+      description:
+        'Focused on software development, database management, and system analysis.',
+      courses: [
+        'Data Structures',
         'Software Engineering',
         'Database Systems',
         'Web Development',
-        'Machine Learning',
-        'Computer Networks',
-      ],
-      achievements: [
-        "Dean's List (3 semesters)",
-        'Computer Science Society Member',
-        'Hackathon Winner 2023',
       ],
     },
     {
-      degree: 'High School Diploma',
-      institution: 'Central High School',
-      location: 'City, State',
-      period: '2018 - 2022',
-      gpa: '3.9/4.0',
-      status: 'Graduated',
-      coursework: [
-        'AP Computer Science',
-        'AP Mathematics',
-        'AP Physics',
-        'Advanced Programming',
+      degree: 'Bachelor of Science in Industrial Engineering',
+      school: 'Engineering Institute',
+      location: 'Boston, MA',
+      period: '2022 - 2026',
+      status: 'In Progress',
+      gpa: '3.7/4.0',
+      description:
+        'Specializing in process optimization, quality control, and project management.',
+      courses: [
+        'Operations Research',
+        'Quality Management',
+        'Supply Chain',
+        'Statistics',
       ],
-      achievements: [
-        'Valedictorian',
-        'National Honor Society',
-        'Programming Club President',
-      ],
+    },
+    {
+      degree: 'Full Stack Web Development Certificate',
+      school: 'Code Academy',
+      location: 'Online',
+      period: '2023',
+      status: 'Completed',
+      description:
+        'Comprehensive program covering modern web development technologies.',
+      courses: ['React', 'Node.js', 'MongoDB', 'Express.js'],
     },
   ]
 
   return (
-    <section id='education' className='py-20 bg-secondary/20'>
-      <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl font-medium mb-4'>Education</h2>
-          <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
+    <section id='education' className='py-20 px-4 sm:px-6 lg:px-8'>
+      <div className='max-w-7xl mx-auto'>
+        <motion.div
+          className='text-center mb-16'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <h2 className='text-3xl sm:text-4xl font-bold mb-4'>Education</h2>
+          <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
             My academic journey and continuous learning path
           </p>
-        </div>
+        </motion.div>
 
-        <div className='space-y-8'>
-          {education.map((edu, index) => (
-            <Card key={index} className='p-8 hover:shadow-lg transition-shadow'>
-              <div className='flex flex-col lg:flex-row lg:items-start lg:justify-between'>
-                <div className='flex-1'>
-                  <div className='flex items-start space-x-4'>
-                    <div className='p-3 bg-primary/10 rounded-full'>
-                      <GraduationCap className='h-6 w-6 text-primary' />
+        <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>
+          {educationData.map((edu, index) => (
+            <motion.div
+              key={edu.degree}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: index * 0.2 }}
+              viewport={{ once: true }}
+            >
+              <Card className='h-full hover:shadow-lg transition-all duration-300 group'>
+                <CardHeader>
+                  <div className='flex items-start justify-between mb-2'>
+                    <GraduationCap className='w-8 h-8 text-primary flex-shrink-0 mt-1' />
+                    <Badge
+                      variant={
+                        edu.status === 'Completed' ? 'default' : 'secondary'
+                      }
+                      className='ml-2'
+                    >
+                      {edu.status}
+                    </Badge>
+                  </div>
+                  <CardTitle className='text-lg leading-tight group-hover:text-primary transition-colors'>
+                    {edu.degree}
+                  </CardTitle>
+                  <div className='space-y-2 text-sm text-muted-foreground'>
+                    <div className='flex items-center'>
+                      <MapPin className='w-4 h-4 mr-2' />
+                      {edu.school}
                     </div>
-                    <div className='flex-1'>
-                      <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4'>
-                        <div>
-                          <h3 className='text-xl font-medium mb-1'>
-                            {edu.degree}
-                          </h3>
-                          <p className='text-lg text-muted-foreground'>
-                            {edu.institution}
-                          </p>
-                        </div>
+                    <div className='flex items-center'>
+                      <Calendar className='w-4 h-4 mr-2' />
+                      {edu.period}
+                    </div>
+                    {edu.location && (
+                      <div className='text-muted-foreground'>
+                        {edu.location}
+                      </div>
+                    )}
+                    {edu.gpa && (
+                      <div className='font-medium text-foreground'>
+                        GPA: {edu.gpa}
+                      </div>
+                    )}
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className='text-muted-foreground mb-4'>
+                    {edu.description}
+                  </p>
+                  <div className='space-y-2'>
+                    <h4 className='font-medium text-sm'>Key Courses:</h4>
+                    <div className='flex flex-wrap gap-2'>
+                      {edu.courses.map((course) => (
                         <Badge
-                          variant={
-                            edu.status === 'In Progress'
-                              ? 'default'
-                              : 'secondary'
-                          }
-                          className='mt-2 sm:mt-0'
+                          key={course}
+                          variant='outline'
+                          className='text-xs'
                         >
-                          {edu.status}
+                          {course}
                         </Badge>
-                      </div>
-
-                      <div className='flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-6 text-sm text-muted-foreground'>
-                        <div className='flex items-center space-x-2'>
-                          <Calendar className='h-4 w-4' />
-                          <span>{edu.period}</span>
-                        </div>
-                        <div className='flex items-center space-x-2'>
-                          <MapPin className='h-4 w-4' />
-                          <span>{edu.location}</span>
-                        </div>
-                        <div className='font-medium text-primary'>
-                          GPA: {edu.gpa}
-                        </div>
-                      </div>
-
-                      <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
-                        <div>
-                          <h4 className='font-medium mb-3'>
-                            Relevant Coursework
-                          </h4>
-                          <div className='flex flex-wrap gap-2'>
-                            {edu.coursework.map((course, courseIndex) => (
-                              <Badge
-                                key={courseIndex}
-                                variant='outline'
-                                className='text-xs'
-                              >
-                                {course}
-                              </Badge>
-                            ))}
-                          </div>
-                        </div>
-
-                        <div>
-                          <h4 className='font-medium mb-3'>Achievements</h4>
-                          <ul className='space-y-1 text-sm text-muted-foreground'>
-                            {edu.achievements.map(
-                              (achievement, achievementIndex) => (
-                                <li
-                                  key={achievementIndex}
-                                  className='flex items-center'
-                                >
-                                  <div className='w-1.5 h-1.5 bg-primary rounded-full mr-2'></div>
-                                  {achievement}
-                                </li>
-                              )
-                            )}
-                          </ul>
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
-                </div>
-              </div>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
   )
 }
+
+export default Education
