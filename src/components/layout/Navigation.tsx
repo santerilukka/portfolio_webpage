@@ -58,17 +58,17 @@ export function Navigation() {
     return () => observerRef.current?.disconnect()
   }, []) // run once after mount
 
-  const linkBase = 'px-3 py-2 rounded-md text-sm transition-colors'
+  const linkBase = 'px-4 py-3 rounded-md text-base md:text-lg transition-colors'
   const inactive = 'text-foreground hover:text-primary'
-  const active = 'text-primary font-medium'
+  const active = 'text-primary font-large font-semibold'
 
   return (
-    <nav className='fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border'>
+    <nav className='fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border py-3'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='flex items-center justify-between h-16'>
+        <div className='flex items-center justify-between'>
           {/* Logo */}
           <div className='flex-shrink-0'>
-            <span className='text-xl font-medium'></span>
+            <span className='text-2xl md:text-3xl font-medium'></span>
           </div>
           {/* Desktop Navigation */}
           <div className='hidden md:block'>
@@ -170,7 +170,7 @@ export function Navigation() {
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     aria-current={isActive ? 'page' : undefined}
-                    className={`block w-full text-left px-3 py-2 rounded-md text-base transition-colors ${
+                    className={`block w-full text-left px-4 py-3 rounded-md text-lg transition-colors ${
                       isActive
                         ? 'text-primary font-medium'
                         : 'text-foreground hover:text-primary'
