@@ -7,6 +7,7 @@ import { TechStack } from './components/layout/TechStack'
 import Education from './components/layout/Education'
 import { Certificates } from './components/layout/Certificates'
 import { Projects } from './components/layout/Projects'
+import { CurrentlyWorkingOn } from './components/layout/CurrentlyWorkingOn'
 import { Contact } from './components/layout/Contact'
 import { Footer } from './components/layout/Footer'
 
@@ -34,6 +35,7 @@ export default function App() {
         <Education />
         <Certificates />
         <Projects />
+        <CurrentlyWorkingOn />
         <Contact />
       </main>
 

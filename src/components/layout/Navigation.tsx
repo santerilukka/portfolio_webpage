@@ -20,6 +20,7 @@ export function Navigation() {
     { label: 'Education', id: 'education' },
     { label: 'Certificates', id: 'certificates' },
     { label: 'Projects', id: 'projects' },
+    { label: 'Currently', id: 'current-work' },
     { label: 'Contact', id: 'contact' },
   ]
 
