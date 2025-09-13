@@ -37,6 +37,7 @@ const AboutMe = () => {
   return (
     <section id='about' className='py-20 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'>
+        {/* Intro block */}
         <motion.div
           className='text-center mb-16'
           initial={{ opacity: 0, y: 20 }}
@@ -53,6 +54,7 @@ const AboutMe = () => {
           </p>
         </motion.div>
 
+        {/* Highlights */}
         <div className='grid md:grid-cols-3 gap-8 mb-12'>
           {highlights.map((highlight, index) => (
             <motion.div
@@ -79,15 +81,16 @@ const AboutMe = () => {
           ))}
         </div>
 
+        {/* Strengths */}
         <motion.div
-          className='text-center'
+          className='text-center mt-16 md:mt-24 pt-12 pb-10 px-4'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
           <h3 className='text-xl font-semibold mb-6'>Key Strengths</h3>
-          <div className='flex flex-wrap justify-center gap-3'>
+          <div className='flex flex-wrap justify-center gap-6 mx-auto'>
             {skills.map((skill, index) => (
               <motion.div
                 key={skill}
