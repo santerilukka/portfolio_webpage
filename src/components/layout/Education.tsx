@@ -39,14 +39,20 @@ const Education = () => {
       ],
     },
     {
-      degree: 'Full Stack Web Development Certificate',
-      school: 'Code Academy',
-      location: 'Online',
-      period: '2023',
-      status: 'Completed',
+      degree: 'Bachelor of Science Information Technology',
+      school: 'Tech University',
+      location: 'New York, NY',
+      period: '2022 - 2026',
+      status: 'In Progress',
+      gpa: '3.8/4.0',
       description:
-        'Comprehensive program covering modern web development technologies.',
-      courses: ['React', 'Node.js', 'MongoDB', 'Express.js'],
+        'Focused on software development, database management, and system analysis.',
+      courses: [
+        'Data Structures',
+        'Software Engineering',
+        'Database Systems',
+        'Web Development',
+      ],
     },
   ]
 
