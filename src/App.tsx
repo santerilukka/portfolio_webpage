@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { Toaster } from './components/ui/sonner'
 import { Navigation } from './components/layout/Navigation'
 import { Hero } from './components/layout/Hero'
-import { About } from './components/layout/About'
+import AboutMe from './components/layout/AboutMe'
 import { TechStack } from './components/layout/TechStack'
 import Education from './components/layout/Education'
 import { Certificates } from './components/layout/Certificates'
@@ -29,7 +29,7 @@ export default function App() {
       {/* Main Content */}
       <main>
         <Hero />
-        <About />
+        <AboutMe />
         <TechStack />
         <Education />
         <Certificates />

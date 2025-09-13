@@ -1,3 +1,9 @@
+/*
+
+Currently unused component for possible future use
+
+*/
+
 import React from 'react'
 import { Card } from '../ui/card'
 import { Code, Lightbulb, Users, Zap } from 'lucide-react'
