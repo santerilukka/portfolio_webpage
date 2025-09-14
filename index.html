@@ -3,6 +3,20 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // default stays dark if no preference
+      // otherwise set theme based on localStorage
+      ;(function () {
+        try {
+          const stored = localStorage.getItem('theme')
+          if (stored === 'light') {
+            document.documentElement.classList.remove('dark')
+          } else if (stored === 'dark') {
+            document.documentElement.classList.add('dark')
+          }
+        } catch (_) {}
+      })()
+    </script>
     <title>
       Santeri Lukka | Portfolio of a 24-year-old IT & IEM University Student
     </title>

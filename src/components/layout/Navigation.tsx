@@ -3,14 +3,24 @@ import { Button } from '../ui/button'
 import { Moon, Sun, Github, Linkedin, Menu, X } from 'lucide-react'
 
 export function Navigation() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState<boolean>(() => {
+    // Optional: remember previous choice
+    const stored = localStorage.getItem('theme')
+    if (stored) return stored === 'dark'
+    return true // default to dark
+  })
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string>('hero')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
   useEffect(() => {
-    if (darkMode) document.documentElement.classList.add('dark')
-    else document.documentElement.classList.remove('dark')
+    if (darkMode) {
+      document.documentElement.classList.add('dark')
+      localStorage.setItem('theme', 'dark')
+    } else {
+      document.documentElement.classList.remove('dark')
+      localStorage.setItem('theme', 'light')
+    }
   }, [darkMode])
 
   const navItems = [
