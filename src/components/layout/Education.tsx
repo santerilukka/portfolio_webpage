@@ -143,6 +143,41 @@ const Education = () => {
             </motion.div>
           ))}
         </div>
+        {/* Summary Stats */}
+        <div className='mt-16 text-center'>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
+            <div>
+              <div className='text-2xl md:text-3xl font-medium text-primary'>
+                6
+              </div>
+              <div className='text-sm text-muted-foreground'>
+                Certificates Earned
+              </div>
+            </div>
+            <div>
+              <div className='text-2xl md:text-3xl font-medium text-primary'>
+                4
+              </div>
+              <div className='text-sm text-muted-foreground'>
+                Major Platforms
+              </div>
+            </div>
+            <div>
+              <div className='text-2xl md:text-3xl font-medium text-primary'>
+                18+
+              </div>
+              <div className='text-sm text-muted-foreground'>
+                Skills Validated
+              </div>
+            </div>
+            <div>
+              <div className='text-2xl md:text-3xl font-medium text-primary'>
+                100%
+              </div>
+              <div className='text-sm text-muted-foreground'>Active Status</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )
