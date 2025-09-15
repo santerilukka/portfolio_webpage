@@ -238,13 +238,30 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Existing simple scroll arrow (kept, no added text) */}
-        <div className='absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce'>
-          <ArrowDown
-            className='h-8 w-8 text-muted-foreground cursor-pointer'
-            onClick={scrollToProjects}
-          />
-        </div>
+        {/* Scroll arrow */}
+        <motion.button
+          type='button'
+          onClick={scrollToProjects}
+          aria-label='Scroll to projects'
+          className='absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8, ease: 'easeOut' }}
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            <ArrowDown className='h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary' />
+          </motion.div>
+
+          <motion.span
+            className='text-xs font-medium tracking-wider text-muted-foreground group-hover:text-foreground'
+            transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+          >
+            Scroll Down
+          </motion.span>
+        </motion.button>
       </div>
     </section>
   )
