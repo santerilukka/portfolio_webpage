@@ -1,12 +1,21 @@
 import React from 'react'
+import { useEffect, useState } from 'react'
 import heroImage from '../../assets/hero-image.jpg'
 import { Button } from '../ui/button'
 import { ArrowDown } from 'lucide-react'
 import { ImageWithFallback } from '../figma/ImageWithFallback'
 import { Badge } from '../ui/badge'
 import { motion } from 'framer-motion'
+import LightRays from '../ui/effects/LightRays'
 
 export function Hero() {
+  const [showRays, setShowRays] = useState(false)
+
+  useEffect(() => {
+    const id = setTimeout(() => setShowRays(true), 300)
+    return () => clearTimeout(id)
+  }, [])
+
   const scrollToProjects = () => {
     const element = document.getElementById('about')
     element?.scrollIntoView({ behavior: 'smooth' })
@@ -24,6 +33,31 @@ export function Hero() {
       id='hero'
       className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-secondary/20'
     >
+      <div className='absolute inset-0 pointer-events-none'>
+        {showRays && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, ease: 'ease', delay: 0 }}
+            className='w-full h-full'
+          >
+            <LightRays
+              raysOrigin='top-center'
+              raysColor='#0f4ed2'
+              raysSpeed={0.4}
+              lightSpread={2}
+              rayLength={2}
+              followMouse
+              mouseInfluence={0}
+              noiseAmount={0}
+              distortion={0}
+              saturation={1}
+              className='mix-blend-screen'
+            />
+          </motion.div>
+        )}
+      </div>
+
       {/* Animated background accents (subtle, using existing palette) */}
       <motion.div
         aria-hidden
