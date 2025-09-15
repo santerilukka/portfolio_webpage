@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import CountUp from '../ui/effects/CountUpEffect.tsx'
 
 export function TechStack() {
   const sectionRef = useRef<HTMLElement>(null)
@@ -211,25 +212,57 @@ export function TechStack() {
         <div className='grid grid-cols-2 md:grid-cols-4 gap-8 mt-16'>
           <div className='text-center'>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              15+
+              <CountUp
+                from={10}
+                to={15}
+                separator=' '
+                direction='up'
+                duration={0.2}
+                className='count-up-text'
+              />
+              +
             </div>
             <div className='text-sm text-muted-foreground'>Technologies</div>
           </div>
           <div className='text-center'>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              3+
+              <CountUp
+                from={0}
+                to={3}
+                separator=' '
+                direction='up'
+                duration={0.4}
+                className='count-up-text'
+              />
+              +
             </div>
             <div className='text-sm text-muted-foreground'>Years Learning</div>
           </div>
           <div className='text-center'>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              20+
+              <CountUp
+                from={0}
+                to={20}
+                separator=' '
+                direction='up'
+                duration={0.6}
+                className='count-up-text'
+              />
+              +
             </div>
             <div className='text-sm text-muted-foreground'>Projects Built</div>
           </div>
           <div className='text-center'>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              5+
+              <CountUp
+                from={0}
+                to={5}
+                separator=' '
+                direction='up'
+                duration={0.8}
+                className='count-up-text'
+              />
+              +
             </div>
             <div className='text-sm text-muted-foreground'>Certifications</div>
           </div>
