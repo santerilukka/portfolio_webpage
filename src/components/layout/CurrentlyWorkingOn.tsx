@@ -48,11 +48,7 @@ export function CurrentlyWorkingOn() {
                 </div>
                 <div className='flex flex-wrap gap-1 mt-2'>
                   {item.stack.map((tech) => (
-                    <Badge
-                      key={tech}
-                      variant='outline'
-                      className='text-[11px] font-normal'
-                    >
+                    <Badge key={tech} variant='outline' className='text-xs'>
                       {tech}
                     </Badge>
                   ))}
