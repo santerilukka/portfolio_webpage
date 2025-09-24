@@ -1,108 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import CountUp from '../ui/effects/CountUpEffect.tsx'
+import { technologies } from '../../data/tech.ts'
 
 export function TechStack() {
   const sectionRef = useRef<HTMLElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
-
-  const technologies = [
-    {
-      name: 'React',
-      icon: '⚛️',
-      color: 'text-blue-500',
-      link: 'https://react.dev/',
-    },
-    {
-      name: 'TypeScript',
-      icon: '🔷',
-      color: 'text-blue-600',
-      link: 'https://www.typescriptlang.org/',
-    },
-    {
-      name: 'Node.js',
-      icon: '🟢',
-      color: 'text-green-500',
-      link: 'https://nodejs.org/',
-    },
-    {
-      name: 'Python',
-      icon: '🐍',
-      color: 'text-yellow-500',
-      link: 'https://www.python.org/',
-    },
-    {
-      name: 'JavaScript',
-      icon: '🟨',
-      color: 'text-yellow-400',
-      link: 'https://developer.mozilla.org/docs/Web/JavaScript',
-    },
-    {
-      name: 'Vite',
-      icon: '⚡',
-      color: 'text-purple-500',
-      link: 'https://vitejs.dev/',
-    },
-    {
-      name: 'Tailwind CSS',
-      icon: '🎨',
-      color: 'text-cyan-500',
-      link: 'https://tailwindcss.com/',
-    },
-    {
-      name: 'Git',
-      icon: '📁',
-      color: 'text-orange-500',
-      link: 'https://git-scm.com/',
-    },
-    {
-      name: 'Docker',
-      icon: '🐳',
-      color: 'text-blue-400',
-      link: 'https://www.docker.com/',
-    },
-    {
-      name: 'PostgreSQL',
-      icon: '🐘',
-      color: 'text-blue-700',
-      link: 'https://www.postgresql.org/',
-    },
-    {
-      name: 'MongoDB',
-      icon: '🍃',
-      color: 'text-green-600',
-      link: 'https://www.mongodb.com/',
-    },
-    {
-      name: 'AWS',
-      icon: '☁️',
-      color: 'text-orange-400',
-      link: 'https://aws.amazon.com/',
-    },
-    {
-      name: 'Next.js',
-      icon: '▲',
-      color: 'text-gray-800 dark:text-white',
-      link: 'https://nextjs.org/',
-    },
-    {
-      name: 'Express',
-      icon: '🚀',
-      color: 'text-gray-600',
-      link: 'https://expressjs.com/',
-    },
-    {
-      name: 'Firebase',
-      icon: '🔥',
-      color: 'text-red-500',
-      link: 'https://firebase.google.com/',
-    },
-    {
-      name: 'GraphQL',
-      icon: '💜',
-      color: 'text-pink-500',
-      link: 'https://graphql.org/',
-    },
-  ]
 
   const pausedRef = useRef(false)
   const offscreenRef = useRef(false)
