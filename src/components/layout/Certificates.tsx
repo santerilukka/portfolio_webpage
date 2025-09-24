@@ -3,65 +3,9 @@ import { Card } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { Award, ExternalLink, Calendar } from 'lucide-react'
 import GlareHover from '../ui/effects/GlareHoverEffect'
+import { certificates } from '../../data'
 
 export function Certificates() {
-  const certificates = [
-    {
-      title: 'AWS Certified Cloud Practitioner',
-      issuer: 'Amazon Web Services',
-      date: 'March 2024',
-      credentialId: 'CCP-12345',
-      status: 'Active',
-      skills: ['Cloud Computing', 'AWS Services', 'Cloud Security'],
-      link: '#',
-    },
-    {
-      title: 'Google IT Support Professional Certificate',
-      issuer: 'Google (via Coursera)',
-      date: 'January 2024',
-      credentialId: 'GOOG-67890',
-      status: 'Active',
-      skills: ['IT Support', 'Troubleshooting', 'Network Security'],
-      link: '#',
-    },
-    {
-      title: 'React Developer Certification',
-      issuer: 'Meta (Facebook)',
-      date: 'December 2023',
-      credentialId: 'META-54321',
-      status: 'Active',
-      skills: ['React', 'JavaScript', 'Frontend Development'],
-      link: '#',
-    },
-    {
-      title: 'Python for Data Science',
-      issuer: 'IBM (via Coursera)',
-      date: 'October 2023',
-      credentialId: 'IBM-98765',
-      status: 'Active',
-      skills: ['Python', 'Data Analysis', 'Machine Learning'],
-      link: '#',
-    },
-    {
-      title: 'Full Stack Web Development',
-      issuer: 'freeCodeCamp',
-      date: 'August 2023',
-      credentialId: 'FCC-11111',
-      status: 'Active',
-      skills: ['HTML/CSS', 'JavaScript', 'Node.js', 'MongoDB'],
-      link: '#',
-    },
-    {
-      title: 'Git & GitHub Essentials',
-      issuer: 'GitHub',
-      date: 'June 2023',
-      credentialId: 'GH-22222',
-      status: 'Active',
-      skills: ['Git', 'Version Control', 'Collaboration'],
-      link: '#',
-    },
-  ]
-
   return (
     <section id='certificates' className='py-20 bg-background'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
