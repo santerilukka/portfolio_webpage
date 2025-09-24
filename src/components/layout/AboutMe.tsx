@@ -45,7 +45,7 @@ const AboutMe = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className='text-3xl sm:text-4xl font-bold mb-4'>About Me</h2>
+          <h2 className='text-3xl md:text-4xl font-medium mb-4'>About Me</h2>
           <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
             I'm a dedicated student pursuing IT and Industrial Engineering, with
             a strong foundation in technology and a drive to create impactful
