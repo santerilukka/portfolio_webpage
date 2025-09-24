@@ -5,6 +5,7 @@ import { Badge } from '../ui/badge'
 import { GraduationCap, Calendar, MapPin } from 'lucide-react'
 
 const Education = () => {
+  type Course = { name: string; link?: string }
   const educationData = [
     {
       degree: 'Bachelor of Science in Information Technology',
@@ -16,11 +17,23 @@ const Education = () => {
       description:
         'Focused on software development, database management, and system analysis.',
       courses: [
-        'Data Structures',
-        'Software Engineering',
-        'Database Systems',
-        'Web Development',
-      ],
+        {
+          name: 'Data Structures',
+          link: 'https://en.wikipedia.org/wiki/Data_structure',
+        },
+        {
+          name: 'Software Engineering',
+          link: 'https://en.wikipedia.org/wiki/Software_engineering',
+        },
+        {
+          name: 'Database Systems',
+          link: 'https://en.wikipedia.org/wiki/Database',
+        },
+        {
+          name: 'Web Development',
+          link: 'https://developer.mozilla.org/docs/Learn',
+        },
+      ] as Course[],
     },
     {
       degree: 'Bachelor of Science in Industrial Engineering',
@@ -32,11 +45,23 @@ const Education = () => {
       description:
         'Specializing in process optimization, quality control, and project management.',
       courses: [
-        'Operations Research',
-        'Quality Management',
-        'Supply Chain',
-        'Statistics',
-      ],
+        {
+          name: 'Operations Research',
+          link: 'https://en.wikipedia.org/wiki/Operations_research',
+        },
+        {
+          name: 'Quality Management',
+          link: 'https://en.wikipedia.org/wiki/Quality_management',
+        },
+        {
+          name: 'Supply Chain',
+          link: 'https://en.wikipedia.org/wiki/Supply_chain_management',
+        },
+        {
+          name: 'Statistics',
+          link: 'https://en.wikipedia.org/wiki/Statistics',
+        },
+      ] as Course[],
     },
     {
       degree: 'Bachelor of Science Information Technology',
@@ -48,11 +73,23 @@ const Education = () => {
       description:
         'Focused on software development, database management, and system analysis.',
       courses: [
-        'Data Structures',
-        'Software Engineering',
-        'Database Systems',
-        'Web Development',
-      ],
+        {
+          name: 'Data Structures',
+          link: 'https://en.wikipedia.org/wiki/Data_structure',
+        },
+        {
+          name: 'Software Engineering',
+          link: 'https://en.wikipedia.org/wiki/Software_engineering',
+        },
+        {
+          name: 'Database Systems',
+          link: 'https://en.wikipedia.org/wiki/Database',
+        },
+        {
+          name: 'Web Development',
+          link: 'https://developer.mozilla.org/docs/Learn',
+        },
+      ] as Course[],
     },
   ]
 
@@ -129,11 +166,21 @@ const Education = () => {
                     <div className='flex flex-wrap gap-2'>
                       {edu.courses.map((course) => (
                         <Badge
-                          key={course}
+                          asChild
+                          key={course.name}
                           variant='outline'
                           className='text-xs'
                         >
-                          {course}
+                          <motion.a
+                            href={course.link}
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            whileHover={{ scale: 1.02, y: -1 }}
+                            whileTap={{ scale: 0.98 }}
+                            transition={{ duration: 0.15 }}
+                          >
+                            {course.name}
+                          </motion.a>
                         </Badge>
                       ))}
                     </div>
