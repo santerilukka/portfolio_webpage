@@ -1,12 +1,15 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import heroImage from '../../assets/hero-image.jpg'
+//import heroImage from '../../assets/hero-image.jpg'
 import { Button } from '../ui/button'
 import { ArrowDown } from 'lucide-react'
 import { ImageWithFallback } from '../figma/ImageWithFallback'
 import { Badge } from '../ui/badge'
 import { motion } from 'framer-motion'
 import LightRays from '../ui/effects/LightRays'
+
+const heroImage =
+  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80'
 
 export function Hero() {
   const [showRays, setShowRays] = useState(false)
