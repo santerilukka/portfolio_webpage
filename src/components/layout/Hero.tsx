@@ -1,6 +1,5 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-//import heroImage from '../../assets/hero-image.jpg'
 import { Button } from '../ui/button'
 import { ArrowDown } from 'lucide-react'
 import { ImageWithFallback } from '../figma/ImageWithFallback'
