@@ -10,7 +10,7 @@ export type AboutHighlight = {
 export const aboutIntro = {
   title: 'About Me',
   description:
-    "I'm a dedicated student pursuing IT and Industrial Engineering, with a strong foundation in technology and a drive to create impactful solutions. My journey combines technical expertise with creative problem-solving to build meaningful digital experiences.",
+    "I'm a dedicated student pursuing IT and IEM. My journey combines both technical knowledge about the huge world of Information Tehcnology with business and management aspects. I'm committed to life long learning and growth in the tech world.",
 }
 
 export const aboutHighlights: AboutHighlight[] = [
@@ -18,19 +18,18 @@ export const aboutHighlights: AboutHighlight[] = [
     icon: User,
     title: 'Background',
     description:
-      'IT & Industrial Engineering student with a passion for technology and innovation',
+      'IT & IEM M.Sc. student with a passion for technology and business',
   },
   {
     icon: Target,
     title: 'Focus Areas',
-    description:
-      'Full-stack development, system optimization, and user experience design',
+    description: 'Software Engineering, IS/IT Management, Corporate Strategy ',
   },
   {
     icon: Lightbulb,
     title: 'Approach',
     description:
-      'Problem-solving mindset with attention to detail and clean code practices',
+      'Problem-solving & improvement mindset driven by curiosity and innovation',
   },
 ]
 
@@ -39,5 +38,5 @@ export const aboutSkills: string[] = [
   'Team Collaboration',
   'Continuous Learning',
   'Innovation',
-  'Leadership',
+  'Management',
 ]
