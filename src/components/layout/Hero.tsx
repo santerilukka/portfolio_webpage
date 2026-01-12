@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown } from 'lucide-react'
+import { ArrowDown, Divide } from 'lucide-react'
 
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
@@ -129,9 +129,6 @@ function HeroText({
           <p className='text-xl md:text-2xl text-muted-foreground'>
             24-year-old IT & IEM University Student
           </p>
-          <p className='text-lg text-muted-foreground/80'>
-            Creative Developer & Problem Solver
-          </p>
         </motion.div>
       </div>
 
@@ -140,8 +137,8 @@ function HeroText({
         {...fadeInUp}
         transition={{ duration: 0.6, delay: 0.35 }}
       >
-        Passionate about creating innovative solutions and building meaningful
-        digital experiences through clean code and thoughtful design.
+        Driven by tech. Thriving in dynamic environments. Valuing collaboration.
+        Open to new challenges. Eager to make an impact.
       </motion.p>
 
       <motion.div
@@ -245,7 +242,7 @@ function ScrollCta({ onClick }: { onClick: () => void }) {
       type='button'
       onClick={onClick}
       aria-label='Scroll to projects'
-      className='absolute bottom-2 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
+      className='absolute bottom-2 pt-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8, ease: 'easeOut' }}
@@ -267,12 +264,7 @@ export function Hero() {
   const showRays = useDelayedTrue(300)
 
   const achievements = useMemo(
-    () => [
-      { label: '15+ Technologies' },
-      { label: '20+ Projects' },
-      { label: '5+ Certifications' },
-      { label: '3+ Years Learning' },
-    ],
+    () => [{ label: '15+ Technologies' }, { label: '3+ Years Learning' }],
     []
   )
 
