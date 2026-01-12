@@ -1,14 +1,12 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
+//import heroImage from '../../assets/hero-image.jpg'
 import { Button } from '../ui/button'
 import { ArrowDown } from 'lucide-react'
 import { ImageWithFallback } from '../figma/ImageWithFallback'
 import { Badge } from '../ui/badge'
 import { motion } from 'framer-motion'
 import LightRays from '../ui/effects/LightRays'
-
-const heroImage =
-  'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80'
 
 export function Hero() {
   const [showRays, setShowRays] = useState(false)
@@ -220,11 +218,12 @@ export function Hero() {
                     ease: 'easeInOut',
                   }}
                 />
+                {/*
                 <ImageWithFallback
                   src={heroImage}
                   alt='Profile'
                   className='aspect-square w-full rounded-full object-cover border-4 border-primary/10 shadow-xl relative z-10'
-                />
+                />*/}
               </div>
               {/* Status indicator */}
               <motion.div
