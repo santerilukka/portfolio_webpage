@@ -1,39 +1,11 @@
+// Professional Portfolio Website/src/components/layout/AboutMe.tsx
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
 import { Badge } from '../ui/badge'
-import { User, Target, Lightbulb } from 'lucide-react'
+import { aboutHighlights, aboutSkills, aboutIntro } from '../../data'
 
 const AboutMe = () => {
-  const highlights = [
-    {
-      icon: User,
-      title: 'Background',
-      description:
-        'IT & Industrial Engineering student with a passion for technology and innovation',
-    },
-    {
-      icon: Target,
-      title: 'Focus Areas',
-      description:
-        'Full-stack development, system optimization, and user experience design',
-    },
-    {
-      icon: Lightbulb,
-      title: 'Approach',
-      description:
-        'Problem-solving mindset with attention to detail and clean code practices',
-    },
-  ]
-
-  const skills = [
-    'Problem Solving',
-    'Team Collaboration',
-    'Continuous Learning',
-    'Innovation',
-    'Leadership',
-  ]
-
   return (
     <section id='about' className='py-20 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'>
@@ -45,18 +17,17 @@ const AboutMe = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className='text-3xl md:text-4xl font-medium mb-4'>About Me</h2>
+          <h2 className='text-3xl md:text-4xl font-medium mb-4'>
+            {aboutIntro.title}
+          </h2>
           <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-            I'm a dedicated student pursuing IT and Industrial Engineering, with
-            a strong foundation in technology and a drive to create impactful
-            solutions. My journey combines technical expertise with creative
-            problem-solving to build meaningful digital experiences.
+            {aboutIntro.description}
           </p>
         </motion.div>
 
         {/* Highlights */}
         <div className='grid md:grid-cols-3 gap-8 mb-12'>
-          {highlights.map((highlight, index) => (
+          {aboutHighlights.map((highlight, index) => (
             <motion.div
               key={highlight.title}
               initial={{ opacity: 0, y: 20 }}
@@ -81,38 +52,24 @@ const AboutMe = () => {
           ))}
         </div>
 
-        {/* Strengths */}
+        {/* Strengths / Skills */}
         <motion.div
           className='text-center mt-16 md:mt-24 pt-12 pb-10 px-4'
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className='text-xl font-semibold mb-6'>Key Strengths</h3>
-          <div className='flex flex-wrap justify-center gap-6 mx-auto'>
-            {skills.map((skill, index) => (
-              <motion.div
+          <h3 className='text-2xl md:text-3xl font-medium mb-6'>Strengths</h3>
+          <div className='flex flex-wrap justify-center gap-3'>
+            {aboutSkills.map((skill) => (
+              <Badge
                 key={skill}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: true }}
+                variant='secondary'
+                className='text-sm py-2 px-4'
               >
-                {' '}
-                <motion.div
-                  whileHover={{ scale: 1.05, y: -1 }}
-                  transition={{ duration: 0.15 }}
-                >
-                  <Badge
-                    variant='secondary'
-                    className='px-4 py-2 text-sm transition-shadow duration-300 hover:shadow-lg'
-                  >
-                    {' '}
-                    {skill}
-                  </Badge>
-                </motion.div>
-              </motion.div>
+                {skill}
+              </Badge>
             ))}
           </div>
         </motion.div>
