@@ -1,0 +1,31 @@
+{
+  "app": {
+    "title": "Portfolio"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "I'm a dedicated student pursuing IT and IEM. My journey combines both technical knowledge about the huge world of Information Tehcnology with business and management aspects. I'm committed to life long learning and growth in the tech world.",
+    "highlights": [
+      {
+        "title": "Background",
+        "description": "IT & IEM M.Sc. student with a passion for technology and business"
+      },
+      {
+        "title": "Focus Areas",
+        "description": "Software Engineering, IS/IT Management, Corporate Strategy "
+      },
+      {
+        "title": "Approach",
+        "description": "Problem-solving & improvement mindset driven by curiosity and innovation"
+      }
+    ],
+    "strengthsTitle": "Strengths",
+    "skills": [
+      "Problem Solving",
+      "Team Collaboration",
+      "Continuous Learning",
+      "Innovation",
+      "Management"
+    ]
+  }
+}

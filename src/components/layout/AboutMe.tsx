@@ -1,11 +1,16 @@
-// Professional Portfolio Website/src/components/layout/AboutMe.tsx
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+
 import { Card, CardContent } from '../ui/card'
 import { Badge } from '../ui/badge'
-import { aboutHighlights, aboutSkills, aboutIntro } from '../../data'
+import { aboutHighlights } from '../../data'
 
 const AboutMe = () => {
+  const { t } = useTranslation()
+
+  const skills = t('about.skills', { returnObjects: true }) as string[]
+
   return (
     <section id='about' className='py-20 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'>
@@ -18,10 +23,10 @@ const AboutMe = () => {
           viewport={{ once: true }}
         >
           <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-            {aboutIntro.title}
+            {t('about.title')}
           </h2>
           <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-            {aboutIntro.description}
+            {t('about.description')}
           </p>
         </motion.div>
 
@@ -40,11 +45,13 @@ const AboutMe = () => {
                   <div className='w-10 h-10 mx-auto mb-4 bg-primary/10 rounded-full flex items-center justify-center'>
                     <highlight.icon className='w-6 h-6 text-primary' />
                   </div>
+
                   <h3 className='text-xl font-semibold mb-3'>
-                    {highlight.title}
+                    {t(`about.highlights.${index}.title`)}
                   </h3>
+
                   <p className='text-muted-foreground'>
-                    {highlight.description}
+                    {t(`about.highlights.${index}.description`)}
                   </p>
                 </CardContent>
               </Card>
@@ -60,9 +67,12 @@ const AboutMe = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h3 className='text-2xl md:text-3xl font-medium mb-6'>Strengths</h3>
+          <h3 className='text-2xl md:text-3xl font-medium mb-6'>
+            {t('about.strengthsTitle')}
+          </h3>
+
           <div className='flex flex-wrap justify-center gap-3'>
-            {aboutSkills.map((skill) => (
+            {skills.map((skill) => (
               <Badge
                 key={skill}
                 variant='secondary'

@@ -2,12 +2,12 @@ import type { Course, EducationItem } from '../types/content'
 
 export const educationData: EducationItem[] = [
   {
-    degree: 'Bachelor of Science in Information Technology',
-    school: 'Tech University',
+    degree: 'M.Sc. Software Engineering',
+    school: 'University of Turku',
     location: 'New York, NY',
-    period: '2022 - 2026',
+    period: '2025 - 2027',
     status: 'In Progress',
-    gpa: '3.8/4.0',
+    gpa: '3.5 / 5',
     description:
       'Focused on software development, database management, and system analysis.',
     courses: [
@@ -30,7 +30,7 @@ export const educationData: EducationItem[] = [
     ] as Course[],
   },
   {
-    degree: 'Bachelor of Science in Industrial Engineering',
+    degree: 'M.Sc. in Industrial Engineering and Management',
     school: 'Engineering Institute',
     location: 'Boston, MA',
     period: '2022 - 2026',
@@ -58,12 +58,12 @@ export const educationData: EducationItem[] = [
     ] as Course[],
   },
   {
-    degree: 'Bachelor of Science Information Technology',
-    school: 'Tech University',
-    location: 'New York, NY',
-    period: '2022 - 2026',
-    status: 'In Progress',
-    gpa: '3.8/4.0',
+    degree: 'B.Sc. in Information Technology',
+    school: 'University of Turku',
+    location: 'Turku, Finland',
+    period: '2022 - 2025',
+    status: 'Completed',
+    gpa: '4 / 5',
     description:
       'Focused on software development, database management, and system analysis.',
     courses: [
