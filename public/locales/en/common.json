@@ -14,7 +14,16 @@
       "Contact"
     ]
   },
+  "hero": {
+    "name": "Santeri Lukka",
+    "subtitle": "24-year-old IT & IEM University Student",
+    "cta": {
+      "primary": "View My Work",
+      "secondary": "Get In Touch"
+    }
+  },
   "about": {
+    "available": "Available for opportunities",
     "title": "About Me",
     "description": "I'm a dedicated student pursuing IT and IEM. My journey combines both technical knowledge about the huge world of Information Tehcnology with business and management aspects. I'm committed to life long learning and growth in the tech world.",
     "highlights": [
@@ -32,6 +41,10 @@
       }
     ],
     "strengthsTitle": "Strengths",
+    "stats": {
+      "technologies": "Technologies Learned",
+      "yearsLearning": "Years of Learning"
+    },
     "skills": [
       "Problem Solving",
       "Team Collaboration",

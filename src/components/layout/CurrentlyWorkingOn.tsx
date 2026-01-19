@@ -9,6 +9,7 @@ import { aboutHighlights } from '../../data'
 
 export function CurrentlyWorkingOn() {
   const { t } = useTranslation()
+  const skills = t('about.skills', { returnObjects: true }) as string[]
 
   return (
     <section id='current-work' className='py-20 px-4 sm:px-6 lg:px-8'>
@@ -54,6 +55,30 @@ export function CurrentlyWorkingOn() {
             </motion.div>
           ))}
         </div>
+
+        {/* Strengths / Skills (moved from AboutMe) */}
+        <motion.div
+          className='text-center mb-12'
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h3 className='text-2xl md:text-3xl font-medium mb-6'>
+            {t('about.strengthsTitle')}
+          </h3>
+          <div className='flex flex-wrap justify-center gap-3'>
+            {skills.map((skill) => (
+              <Badge
+                key={skill}
+                variant='secondary'
+                className='text-sm py-2 px-4'
+              >
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </motion.div>
 
         {/* Existing "currently working on" items */}
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
