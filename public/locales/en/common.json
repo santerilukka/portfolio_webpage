@@ -191,5 +191,286 @@
         "suffix": "+"
       }
     }
+  },
+  "education": {
+    "title": "Education",
+    "subtitle": "My academic journey and continuous learning path",
+    "gpaLabel": "GPA",
+    "keyCourses": "Key Courses",
+    "items": [
+      {
+        "degree": "M.Sc. Software Engineering",
+        "school": "University of Turku",
+        "location": "New York, NY",
+        "period": "2025 - 2027",
+        "status": "In Progress",
+        "gpa": "3.5 / 5",
+        "description": "Focused on software development, database management, and system analysis.",
+        "courses": [
+          {
+            "name": "Data Structures",
+            "link": "https://en.wikipedia.org/wiki/Data_structure"
+          },
+          {
+            "name": "Software Engineering",
+            "link": "https://en.wikipedia.org/wiki/Software_engineering"
+          },
+          {
+            "name": "Database Systems",
+            "link": "https://en.wikipedia.org/wiki/Database"
+          },
+          {
+            "name": "Web Development",
+            "link": "https://developer.mozilla.org/docs/Learn"
+          }
+        ]
+      },
+      {
+        "degree": "M.Sc. in Industrial Engineering and Management",
+        "school": "Engineering Institute",
+        "location": "Boston, MA",
+        "period": "2022 - 2026",
+        "status": "In Progress",
+        "gpa": "3.7/4.0",
+        "description": "Specializing in process optimization, quality control, and project management.",
+        "courses": [
+          {
+            "name": "Operations Research",
+            "link": "https://en.wikipedia.org/wiki/Operations_research"
+          },
+          {
+            "name": "Quality Management",
+            "link": "https://en.wikipedia.org/wiki/Quality_management"
+          },
+          {
+            "name": "Supply Chain",
+            "link": "https://en.wikipedia.org/wiki/Supply_chain_management"
+          },
+          {
+            "name": "Statistics",
+            "link": "https://en.wikipedia.org/wiki/Statistics"
+          }
+        ]
+      },
+      {
+        "degree": "B.Sc. in Information Technology",
+        "school": "University of Turku",
+        "location": "Turku, Finland",
+        "period": "2022 - 2025",
+        "status": "Completed",
+        "gpa": "4 / 5",
+        "description": "Focused on software development, database management, and system analysis.",
+        "courses": [
+          {
+            "name": "Data Structures",
+            "link": "https://en.wikipedia.org/wiki/Data_structure"
+          },
+          {
+            "name": "Software Engineering",
+            "link": "https://en.wikipedia.org/wiki/Software_engineering"
+          },
+          {
+            "name": "Database Systems",
+            "link": "https://en.wikipedia.org/wiki/Database"
+          },
+          {
+            "name": "Web Development",
+            "link": "https://developer.mozilla.org/docs/Learn"
+          }
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "title": "Certificates",
+    "subtitle": "Professional certifications and achievements that validate my skills and knowledge",
+    "credentialId": "Credential ID",
+    "skillsCovered": "Skills Covered",
+    "view": "View Certificate",
+    "items": [
+      {
+        "title": "AWS Certified Cloud Practitioner",
+        "issuer": "Amazon Web Services",
+        "date": "March 2024",
+        "credentialId": "CCP-12345",
+        "status": "Active",
+        "skills": ["Cloud Computing", "AWS Services", "Cloud Security"],
+        "link": "#"
+      },
+      {
+        "title": "Google IT Support Professional Certificate",
+        "issuer": "Google (via Coursera)",
+        "date": "January 2024",
+        "credentialId": "GOOG-67890",
+        "status": "Active",
+        "skills": ["IT Support", "Troubleshooting", "Network Security"],
+        "link": "#"
+      },
+      {
+        "title": "React Developer Certification",
+        "issuer": "Meta (Facebook)",
+        "date": "December 2023",
+        "credentialId": "META-54321",
+        "status": "Active",
+        "skills": ["React", "JavaScript", "Frontend Development"],
+        "link": "#"
+      },
+      {
+        "title": "Python for Data Science",
+        "issuer": "IBM (via Coursera)",
+        "date": "October 2023",
+        "credentialId": "IBM-98765",
+        "status": "Active",
+        "skills": ["Python", "Data Analysis", "Machine Learning"],
+        "link": "#"
+      },
+      {
+        "title": "Full Stack Web Development",
+        "issuer": "freeCodeCamp",
+        "date": "August 2023",
+        "credentialId": "FCC-11111",
+        "status": "Active",
+        "skills": ["HTML/CSS", "JavaScript", "Node.js", "MongoDB"],
+        "link": "#"
+      },
+      {
+        "title": "Git & GitHub Essentials",
+        "issuer": "GitHub",
+        "date": "June 2023",
+        "credentialId": "GH-22222",
+        "status": "Active",
+        "skills": ["Git", "Version Control", "Collaboration"],
+        "link": "#"
+      }
+    ],
+    "stats": {
+      "earned": { "value": "6", "label": "Certificates Earned" },
+      "platforms": { "value": "4", "label": "Major Platforms" },
+      "validated": { "value": "18+", "label": "Skills Validated" },
+      "active": { "value": "100%", "label": "Active Status" }
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A collection of projects that showcase my skills and passion for development",
+    "featuredTitle": "Featured Projects",
+    "otherTitle": "Other Projects",
+    "badges": {
+      "featured": "Featured"
+    },
+    "links": {
+      "live": "Live",
+      "code": "Code",
+      "liveDemo": "Live Demo",
+      "github": "GitHub",
+      "liveAria": "Open live project",
+      "githubAria": "Open GitHub repository"
+    },
+    "cta": {
+      "text": "Want to see more of my work?",
+      "button": "View All on GitHub",
+      "githubUrl": "https://github.com"
+    },
+    "items": [
+      {
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with user authentication, payment processing, and admin dashboard. Built with React, Node.js, and PostgreSQL.",
+        "image": "https://images.unsplash.com/photo-1642132652803-01f9738d0446?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjB3ZWIlMjBhcHAlMjBwcm9qZWN0fGVufDF8fHx8MTc1NzcwMTYyMHww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "technologies": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "Stripe",
+          "Tailwind CSS"
+        ],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Task Management App",
+        "description": "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
+        "image": "https://images.unsplash.com/photo-1597740985671-2a8a3b80502e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ258ZW58MXx8fHwxNTc3NjI3ODM1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "technologies": ["React", "Firebase", "React DnD", "Material-UI"],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Data Analytics Dashboard",
+        "description": "An interactive dashboard for visualizing business metrics and KPIs with real-time data updates and customizable charts.",
+        "image": "https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc1NzU5ODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "technologies": ["React", "D3.js", "Python", "FastAPI", "MongoDB"],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Portfolio Website",
+        "description": "This responsive portfolio website showcasing my projects, skills, and experience with modern design principles.",
+        "image": "https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc1NzU5ODc0Nnww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": false
+      }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "I'm always open to discussing new opportunities, collaborations, or just having a chat about technology",
+    "formTitle": "Send Me a Message",
+    "form": {
+      "name": { "label": "Name", "placeholder": "Your name" },
+      "email": { "label": "Email", "placeholder": "your.email@example.com" },
+      "subject": { "label": "Subject", "placeholder": "What's this about?" },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell me about your project or just say hi!"
+      },
+      "submit": "Send Message",
+      "toastSuccess": "Message sent successfully! I'll get back to you soon."
+    },
+    "infoTitle": "Contact Information",
+    "connectTitle": "Connect With Me",
+    "contactInfo": [
+      {
+        "type": "email",
+        "label": "Email",
+        "value": "@email.com",
+        "link": "mailto:@email.com"
+      },
+      {
+        "type": "phone",
+        "label": "Phone",
+        "value": "+1 (555) 123-4567",
+        "link": "tel:+15551234567"
+      },
+      { "type": "location", "label": "Location", "value": "City, State, USA" }
+    ],
+    "socialLinks": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "link": "https://github.com/santerilukka",
+        "username": "@santerilukka"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "link": "https://linkedin.com/in/santerilukka",
+        "username": "/in/santerilukka"
+      }
+    ],
+    "quickResponse": {
+      "title": "Quick Response",
+      "description": "I typically respond to messages within 24 hours. For urgent matters, feel free to reach out via phone or LinkedIn.",
+      "indicator": "Usually responds within a day"
+    }
   }
 }

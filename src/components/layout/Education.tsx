@@ -3,7 +3,6 @@ import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { GraduationCap, Calendar, MapPin } from 'lucide-react'
-import { educationData } from '../../data'
 import { useTranslation } from 'react-i18next'
 
 type EducationProps = {
@@ -11,8 +10,31 @@ type EducationProps = {
   className?: string
 }
 
-function Education({ asSection = true, className = '' }: EducationProps) {
+type EducationCourse = {
+  name: string
+  link?: string
+}
+
+type EducationItemI18n = {
+  degree: string
+  school: string
+  location?: string
+  period: string
+  status?: string
+  gpa?: string
+  description: string
+  courses: EducationCourse[]
+}
+
+export default function Education({
+  asSection = true,
+  className = '',
+}: EducationProps) {
   const { t } = useTranslation()
+
+  const items = t('education.items', {
+    returnObjects: true,
+  }) as EducationItemI18n[]
 
   const Inner = (
     <>
@@ -24,20 +46,17 @@ function Education({ asSection = true, className = '' }: EducationProps) {
         viewport={{ once: true }}
       >
         <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-          {t('education.title', 'Education')}
+          {t('education.title')}
         </h2>
         <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-          {t(
-            'education.subtitle',
-            'My academic journey and continuous learning path'
-          )}
+          {t('education.subtitle')}
         </p>
       </motion.div>
 
       <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>
-        {educationData.map((edu, index) => (
+        {items.map((edu, index) => (
           <motion.div
-            key={edu.degree}
+            key={`${edu.degree}-${index}`}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -47,14 +66,16 @@ function Education({ asSection = true, className = '' }: EducationProps) {
               <CardHeader>
                 <div className='flex items-start justify-between mb-2'>
                   <GraduationCap className='w-8 h-8 text-primary flex-shrink-0 mt-1' />
-                  <Badge
-                    variant={
-                      edu.status === 'Completed' ? 'default' : 'secondary'
-                    }
-                    className='ml-2'
-                  >
-                    {edu.status}
-                  </Badge>
+                  {edu.status && (
+                    <Badge
+                      variant={
+                        edu.status === 'Completed' ? 'default' : 'secondary'
+                      }
+                      className='ml-2'
+                    >
+                      {edu.status}
+                    </Badge>
+                  )}
                 </div>
 
                 <CardTitle className='text-lg leading-tight group-hover:text-primary transition-colors'>
@@ -78,7 +99,7 @@ function Education({ asSection = true, className = '' }: EducationProps) {
 
                   {edu.gpa && (
                     <div className='font-medium text-foreground'>
-                      {t('education.gpa', 'GPA')}: {edu.gpa}
+                      {t('education.gpaLabel')}: {edu.gpa}
                     </div>
                   )}
                 </div>
@@ -89,29 +110,39 @@ function Education({ asSection = true, className = '' }: EducationProps) {
 
                 <div className='space-y-2'>
                   <h4 className='font-medium text-sm'>
-                    {t('education.keyCourses', 'Key Courses')}:
+                    {t('education.keyCourses')}:
                   </h4>
 
                   <div className='flex flex-wrap gap-2'>
-                    {edu.courses.map((course) => (
-                      <Badge
-                        asChild
-                        key={course.name}
-                        variant='outline'
-                        className='text-xs'
-                      >
-                        <motion.a
-                          href={course.link}
-                          target='_blank'
-                          rel='noopener noreferrer'
-                          whileHover={{ scale: 1.02, y: -1 }}
-                          whileTap={{ scale: 0.98 }}
-                          transition={{ duration: 0.15 }}
+                    {edu.courses.map((course) => {
+                      const content = (
+                        <span className='inline-block'>{course.name}</span>
+                      )
+
+                      return (
+                        <Badge
+                          key={course.name}
+                          asChild={!!course.link}
+                          variant='outline'
+                          className='text-xs'
                         >
-                          {course.name}
-                        </motion.a>
-                      </Badge>
-                    ))}
+                          {course.link ? (
+                            <motion.a
+                              href={course.link}
+                              target='_blank'
+                              rel='noopener noreferrer'
+                              whileHover={{ scale: 1.02, y: -1 }}
+                              whileTap={{ scale: 0.98 }}
+                              transition={{ duration: 0.15 }}
+                            >
+                              {course.name}
+                            </motion.a>
+                          ) : (
+                            content
+                          )}
+                        </Badge>
+                      )
+                    })}
                   </div>
                 </div>
               </CardContent>
@@ -123,7 +154,6 @@ function Education({ asSection = true, className = '' }: EducationProps) {
   )
 
   if (!asSection) {
-    // Keep anchor on embedded version too
     return (
       <div id='education' className={className}>
         {Inner}
@@ -140,5 +170,3 @@ function Education({ asSection = true, className = '' }: EducationProps) {
     </section>
   )
 }
-
-export default Education

@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import CountUp from '../ui/effects/CountUpEffect.tsx'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
+import { Badge } from '../ui/badge'
 
 type TechStackProps = {
   asSection?: boolean
@@ -45,7 +47,10 @@ export function TechStack({
   const technologies = t('tech.technologies', {
     returnObjects: true,
   }) as TechCarouselItem[]
+
   const stats = t('tech.stats', { returnObjects: true }) as TechStats
+
+  const skills = t('about.skills', { returnObjects: true }) as string[]
 
   useEffect(() => {
     pausedRef.current = isHovering
@@ -142,6 +147,31 @@ export function TechStack({
         </div>
       </div>
 
+      {/* Strengths / Skills (moved here from CurrentlyWorkingOn) */}
+      <motion.div
+        className='text-center mt-12'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <h3 className='text-2xl md:text-3xl font-medium mb-6'>
+          {t('about.strengthsTitle')}
+        </h3>
+        <div className='flex flex-wrap justify-center gap-3'>
+          {skills.map((skill) => (
+            <Badge
+              key={skill}
+              variant='secondary'
+              className='text-sm py-2 px-4'
+            >
+              {skill}
+            </Badge>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Stats */}
       <div className='grid grid-cols-2 md:grid-cols-4 gap-8 mt-16'>
         {(Object.entries(stats) as Array<[keyof TechStats, TechStat]>).map(
           ([key, stat]) => (

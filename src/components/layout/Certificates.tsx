@@ -3,12 +3,28 @@ import { Card } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { Award, ExternalLink, Calendar } from 'lucide-react'
 import GlareHover from '../ui/effects/GlareHoverEffect'
-import { certificates } from '../../data'
 import { useTranslation } from 'react-i18next'
 
 type CertificatesProps = {
   asSection?: boolean
   className?: string
+}
+
+type CertificateI18n = {
+  title: string
+  issuer: string
+  date: string
+  credentialId: string
+  status?: string
+  skills: string[]
+  link?: string
+}
+
+type CertificatesStatsI18n = {
+  earned: { value: string; label: string }
+  platforms: { value: string; label: string }
+  validated: { value: string; label: string }
+  active: { value: string; label: string }
 }
 
 export function Certificates({
@@ -17,24 +33,28 @@ export function Certificates({
 }: CertificatesProps) {
   const { t } = useTranslation()
 
+  const items = t('certificates.items', {
+    returnObjects: true,
+  }) as CertificateI18n[]
+  const stats = t('certificates.stats', {
+    returnObjects: true,
+  }) as CertificatesStatsI18n
+
   const Inner = (
     <>
       <div className='text-center mb-16'>
         <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-          {t('certificates.title', 'Certificates')}
+          {t('certificates.title')}
         </h2>
         <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-          {t(
-            'certificates.subtitle',
-            'Professional certifications and achievements that validate my skills and knowledge'
-          )}
+          {t('certificates.subtitle')}
         </p>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-        {certificates.map((cert, index) => (
+        {items.map((cert, index) => (
           <GlareHover
-            key={index}
+            key={`${cert.title}-${index}`}
             width='100%'
             height='100%'
             background='transparent'
@@ -74,7 +94,7 @@ export function Certificates({
 
                 <div>
                   <p className='text-xs text-muted-foreground mb-2'>
-                    {t('certificates.credentialId', 'Credential ID')}:
+                    {t('certificates.credentialId')}:
                   </p>
                   <p className='text-sm font-mono bg-secondary/50 px-2 py-1 rounded text-xs'>
                     {cert.credentialId}
@@ -83,15 +103,11 @@ export function Certificates({
 
                 <div>
                   <p className='text-sm font-medium mb-2'>
-                    {t('certificates.skillsCovered', 'Skills Covered')}:
+                    {t('certificates.skillsCovered')}:
                   </p>
                   <div className='flex flex-wrap gap-1'>
-                    {cert.skills.map((skill, skillIndex) => (
-                      <Badge
-                        key={skillIndex}
-                        variant='outline'
-                        className='text-xs'
-                      >
+                    {cert.skills.map((skill) => (
+                      <Badge key={skill} variant='outline' className='text-xs'>
                         {skill}
                       </Badge>
                     ))}
@@ -104,7 +120,7 @@ export function Certificates({
                       href={cert.link}
                       className='inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors'
                     >
-                      {t('certificates.view', 'View Certificate')}
+                      {t('certificates.view')}
                       <ExternalLink className='ml-1 h-3 w-3' />
                     </a>
                   </div>
@@ -119,34 +135,34 @@ export function Certificates({
         <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
           <div>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              6
+              {stats.earned.value}
             </div>
             <div className='text-sm text-muted-foreground'>
-              {t('certificates.stats.earned', 'Certificates Earned')}
+              {stats.earned.label}
             </div>
           </div>
           <div>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              4
+              {stats.platforms.value}
             </div>
             <div className='text-sm text-muted-foreground'>
-              {t('certificates.stats.platforms', 'Major Platforms')}
+              {stats.platforms.label}
             </div>
           </div>
           <div>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              18+
+              {stats.validated.value}
             </div>
             <div className='text-sm text-muted-foreground'>
-              {t('certificates.stats.validated', 'Skills Validated')}
+              {stats.validated.label}
             </div>
           </div>
           <div>
             <div className='text-2xl md:text-3xl font-medium text-primary'>
-              100%
+              {stats.active.value}
             </div>
             <div className='text-sm text-muted-foreground'>
-              {t('certificates.stats.active', 'Active Status')}
+              {stats.active.label}
             </div>
           </div>
         </div>
