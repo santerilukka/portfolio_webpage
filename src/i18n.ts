@@ -8,24 +8,26 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
+    // Always default to English unless user explicitly changes it
+    lng: 'en',
     fallbackLng: 'en',
-    supportedLngs: ['en'],
+    supportedLngs: ['en', 'fi'],
     ns: ['common'],
     defaultNS: 'common',
 
-    // loads from: /public/locales/{lng}/{ns}.json
     backend: {
       loadPath: '/locales/{{lng}}/{{ns}}.json',
     },
 
     detection: {
-      order: ['localStorage', 'navigator', 'htmlTag'],
+      // only honor explicit user choice
+      order: ['localStorage'],
       caches: ['localStorage'],
       lookupLocalStorage: 'lang',
     },
 
     interpolation: {
-      escapeValue: false, // React already escapes
+      escapeValue: false,
     },
   })
 

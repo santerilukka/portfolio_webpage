@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Button } from '../ui/button'
 import { Moon, Sun, Github, Linkedin, Menu, X } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { LanguageSelect } from '../layout/Buttons/LanguageSelect'
 
 export function Navigation() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -12,6 +14,15 @@ export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string>('hero')
   const observerRef = useRef<IntersectionObserver | null>(null)
+
+  const { i18n } = useTranslation()
+
+  const language = i18n.language?.startsWith('fi') ? 'fi' : 'en'
+
+  const setLanguage = (lng: 'en' | 'fi') => {
+    i18n.changeLanguage(lng)
+    document.documentElement.lang = lng
+  }
 
   useEffect(() => {
     if (darkMode) {
@@ -118,6 +129,7 @@ export function Navigation() {
                 <Linkedin className='h-4 w-4' />
               </a>
             </Button>
+            <LanguageSelect />
             <Button
               variant='ghost'
               size='sm'
@@ -130,6 +142,7 @@ export function Navigation() {
               )}
             </Button>
             <div className='md:hidden flex items-center space-x-2'>
+              <LanguageSelect />
               <Button
                 variant='ghost'
                 size='sm'
@@ -145,6 +158,7 @@ export function Navigation() {
           </div>
           {/* Mobile menu button */}
           <div className='md:hidden flex items-center space-x-2'>
+            <LanguageSelect />
             <Button
               variant='ghost'
               size='sm'
