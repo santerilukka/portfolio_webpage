@@ -15,6 +15,7 @@ function HeroText() {
       className='w-full text-center lg:text-left space-y-5'
       {...fadeInLeft}
       transition={{ duration: 0.7, ease: 'easeOut' }}
+      aria-label={t('hero.ariaLabel')}
     >
       <motion.h1
         className='text-4xl md:text-6xl lg:text-7xl font-medium tracking-tight'

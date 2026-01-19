@@ -1,11 +1,32 @@
 import React, { useEffect, useRef, useState } from 'react'
 import CountUp from '../ui/effects/CountUpEffect.tsx'
-import { technologies } from '../../data/tech.ts'
 import { useTranslation } from 'react-i18next'
 
 type TechStackProps = {
   asSection?: boolean
   className?: string
+}
+
+type TechCarouselItem = {
+  name: string
+  icon: string
+  color: string
+  link: string
+}
+
+type TechStat = {
+  label: string
+  from?: number
+  to: number
+  duration?: number
+  suffix?: string
+}
+
+type TechStats = {
+  technologies: TechStat
+  yearsLearning: TechStat
+  projectsBuilt: TechStat
+  certifications: TechStat
 }
 
 export function TechStack({
@@ -20,6 +41,11 @@ export function TechStack({
   const frameRef = useRef<number>()
   const scrollPosRef = useRef(0)
   const [isHovering, setIsHovering] = useState(false)
+
+  const technologies = t('tech.technologies', {
+    returnObjects: true,
+  }) as TechCarouselItem[]
+  const stats = t('tech.stats', { returnObjects: true }) as TechStats
 
   useEffect(() => {
     pausedRef.current = isHovering
@@ -68,13 +94,10 @@ export function TechStack({
     <>
       <div className='text-center mb-16'>
         <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-          {t('tech.title', 'Tech Stack')}
+          {t('tech.title')}
         </h2>
         <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-          {t(
-            'tech.subtitle',
-            'Technologies and tools I work with to bring ideas to life'
-          )}
+          {t('tech.subtitle')}
         </p>
       </div>
 
@@ -94,10 +117,7 @@ export function TechStack({
           onMouseLeave={() => setIsHovering(false)}
           onTouchStart={() => setIsHovering(true)}
           onTouchEnd={() => setIsHovering(false)}
-          aria-label={t(
-            'tech.carouselAria',
-            'Continuously scrolling list of technologies'
-          )}
+          aria-label={t('tech.carouselAria')}
         >
           {[...technologies, ...technologies].map((tech, i) => (
             <a
@@ -123,73 +143,24 @@ export function TechStack({
       </div>
 
       <div className='grid grid-cols-2 md:grid-cols-4 gap-8 mt-16'>
-        <div className='text-center'>
-          <div className='text-2xl md:text-3xl font-medium text-primary'>
-            <CountUp
-              from={10}
-              to={15}
-              separator=' '
-              direction='up'
-              duration={0.2}
-              className='count-up-text'
-            />
-            +
-          </div>
-          <div className='text-sm text-muted-foreground'>
-            {t('tech.stats.technologies', 'Technologies')}
-          </div>
-        </div>
-
-        <div className='text-center'>
-          <div className='text-2xl md:text-3xl font-medium text-primary'>
-            <CountUp
-              from={0}
-              to={3}
-              separator=' '
-              direction='up'
-              duration={0.4}
-              className='count-up-text'
-            />
-            +
-          </div>
-          <div className='text-sm text-muted-foreground'>
-            {t('tech.stats.yearsLearning', 'Years Learning')}
-          </div>
-        </div>
-
-        <div className='text-center'>
-          <div className='text-2xl md:text-3xl font-medium text-primary'>
-            <CountUp
-              from={0}
-              to={20}
-              separator=' '
-              direction='up'
-              duration={0.6}
-              className='count-up-text'
-            />
-            +
-          </div>
-          <div className='text-sm text-muted-foreground'>
-            {t('tech.stats.projectsBuilt', 'Projects Built')}
-          </div>
-        </div>
-
-        <div className='text-center'>
-          <div className='text-2xl md:text-3xl font-medium text-primary'>
-            <CountUp
-              from={0}
-              to={5}
-              separator=' '
-              direction='up'
-              duration={0.8}
-              className='count-up-text'
-            />
-            +
-          </div>
-          <div className='text-sm text-muted-foreground'>
-            {t('tech.stats.certifications', 'Certifications')}
-          </div>
-        </div>
+        {(Object.entries(stats) as Array<[keyof TechStats, TechStat]>).map(
+          ([key, stat]) => (
+            <div key={key} className='text-center'>
+              <div className='text-2xl md:text-3xl font-medium text-primary'>
+                <CountUp
+                  from={stat.from ?? 0}
+                  to={stat.to}
+                  separator=' '
+                  direction='up'
+                  duration={stat.duration ?? 0.6}
+                  className='count-up-text'
+                />
+                {stat.suffix ?? ''}
+              </div>
+              <div className='text-sm text-muted-foreground'>{stat.label}</div>
+            </div>
+          )
+        )}
       </div>
     </>
   )

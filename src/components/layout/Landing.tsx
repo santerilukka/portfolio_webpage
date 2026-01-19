@@ -13,11 +13,13 @@ function scrollToId(id: string) {
 }
 
 function ScrollCta({ onClick }: { onClick: () => void }) {
+  const { t } = useTranslation()
+
   return (
     <motion.button
       type='button'
       onClick={onClick}
-      aria-label='Scroll to next section'
+      aria-label={t('landing.scrollCta.ariaLabel')}
       className='absolute bottom-2 pt-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
@@ -30,7 +32,7 @@ function ScrollCta({ onClick }: { onClick: () => void }) {
         <ArrowDown className='h-8 w-8 text-muted-foreground transition-colors group-hover:text-primary' />
       </motion.div>
       <span className='text-xs font-medium tracking-wider text-muted-foreground group-hover:text-foreground'>
-        Scroll Down
+        {t('landing.scrollCta.label')}
       </span>
     </motion.button>
   )
@@ -44,9 +46,9 @@ export function Landing() {
     <section
       id='hero'
       className='relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background to-secondary/20'
+      aria-label={t('landing.ariaLabel')}
     >
       <HeroBackground />
-
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 w-full'>
         {/* Top: Hero */}
         <div className='flex flex-col items-center'>
