@@ -8,11 +8,6 @@ import { HeroLeft } from './Hero'
 import { AboutMeContent } from './AboutMe'
 import { HeroBackground } from './HeroBackground'
 
-const fadeInRight = {
-  initial: { opacity: 0, x: 40 },
-  animate: { opacity: 1, x: 0 },
-}
-
 function scrollToId(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
 }
@@ -53,21 +48,25 @@ export function Landing() {
       <HeroBackground />
 
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 w-full'>
-        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center'>
+        {/* Top: Hero */}
+        <div className='flex flex-col items-center'>
           <HeroLeft />
-
-          <motion.div
-            {...fadeInRight}
-            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
-            className='w-full'
-          >
-            <div className='lg:pl-4'>
-              <AboutMeContent />
-            </div>
-          </motion.div>
         </div>
 
-        {/* CTAs moved here */}
+        {/* Below hero: About */}
+        <motion.div
+          className='mt-10'
+          initial={{ opacity: 0, y: 18 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: true }}
+        >
+          <div className='max-w-3xl mx-auto'>
+            <AboutMeContent />
+          </div>
+        </motion.div>
+
+        {/* CTAs below About */}
         <motion.div
           className='mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center'
           initial={{ opacity: 0, y: 18 }}
