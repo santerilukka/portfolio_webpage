@@ -2,6 +2,18 @@
   "app": {
     "title": "Portfolio"
   },
+  "nav": {
+    "items": [
+      "Home",
+      "About",
+      "Tech Stack",
+      "Education",
+      "Certificates",
+      "Projects",
+      "Currently",
+      "Contact"
+    ]
+  },
   "about": {
     "title": "About Me",
     "description": "I'm a dedicated student pursuing IT and IEM. My journey combines both technical knowledge about the huge world of Information Tehcnology with business and management aspects. I'm committed to life long learning and growth in the tech world.",

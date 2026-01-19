@@ -1,30 +1,158 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { Button } from '../ui/button'
-import { Moon, Sun, Github, Linkedin, Menu, X } from 'lucide-react'
+import React, { useEffect, useRef, useState } from 'react'
+import { Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { LanguageSelect } from '../layout/Buttons/LanguageSelect'
-import { GithubButton } from '../layout/Buttons/GitHubButton'
-import { LinkedinButton } from '../layout/Buttons/LinkedInButton'
-import { ThemeToggleButton } from '../layout/Buttons/ThemeToggleButton'
+
+import { Button } from '../ui/button'
+import { LanguageSelect } from './Buttons/LanguageSelect'
+import { GithubButton } from './Buttons/GitHubButton'
+import { LinkedinButton } from './Buttons/LinkedInButton'
+import { ThemeToggleButton } from './Buttons/ThemeToggleButton'
+
+type NavItem = { label: string; id: string }
+
+function NavLinks({
+  items,
+  activeSection,
+  onClick,
+  className,
+  linkBase,
+  activeClassName,
+  inactiveClassName,
+}: {
+  items: NavItem[]
+  activeSection: string
+  onClick: (id: string) => void
+  className?: string
+  linkBase: string
+  activeClassName: string
+  inactiveClassName: string
+}) {
+  return (
+    <div className={className}>
+      {items.map((item) => {
+        const isActive = activeSection === item.id
+        return (
+          <button
+            key={item.id}
+            onClick={() => onClick(item.id)}
+            aria-current={isActive ? 'page' : undefined}
+            className={`${linkBase} ${
+              isActive ? activeClassName : inactiveClassName
+            }`}
+          >
+            {item.label}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function DesktopActions({
+  darkMode,
+  onToggleTheme,
+}: {
+  darkMode: boolean
+  onToggleTheme: () => void
+}) {
+  return (
+    <div className='hidden md:flex items-center space-x-2'>
+      <GithubButton />
+      <LinkedinButton />
+      <LanguageSelect />
+      <ThemeToggleButton darkMode={darkMode} onToggle={onToggleTheme} />
+    </div>
+  )
+}
+
+function MobileActions({
+  darkMode,
+  onToggleTheme,
+  isMenuOpen,
+  onToggleMenu,
+}: {
+  darkMode: boolean
+  onToggleTheme: () => void
+  isMenuOpen: boolean
+  onToggleMenu: () => void
+}) {
+  return (
+    <div className='md:hidden flex items-center space-x-2'>
+      <GithubButton />
+      <LinkedinButton />
+      <LanguageSelect />
+      <ThemeToggleButton darkMode={darkMode} onToggle={onToggleTheme} />
+      <Button variant='ghost' size='sm' onClick={onToggleMenu} type='button'>
+        {isMenuOpen ? <X className='h-4 w-4' /> : <Menu className='h-4 w-4' />}
+      </Button>
+    </div>
+  )
+}
+
+function MobileMenu({
+  items,
+  activeSection,
+  onNavClick,
+}: {
+  items: NavItem[]
+  activeSection: string
+  onNavClick: (id: string) => void
+}) {
+  return (
+    <div className='md:hidden'>
+      <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border'>
+        {items.map((item) => {
+          const isActive = activeSection === item.id
+          return (
+            <button
+              key={item.id}
+              onClick={() => onNavClick(item.id)}
+              aria-current={isActive ? 'page' : undefined}
+              className={`block w-full text-left px-4 py-3 rounded-md text-lg transition-colors ${
+                isActive
+                  ? 'text-primary font-medium'
+                  : 'text-foreground hover:text-primary'
+              }`}
+            >
+              {item.label}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
 
 export function Navigation() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    // Optional: remember previous choice
     const stored = localStorage.getItem('theme')
     if (stored) return stored === 'dark'
-    return true // default to dark
+    return true
   })
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState<string>('hero')
   const observerRef = useRef<IntersectionObserver | null>(null)
 
-  const { i18n } = useTranslation()
+  const { t } = useTranslation()
 
-  const language = i18n.language?.startsWith('fi') ? 'fi' : 'en'
+  const navLabels = t('nav.items', { returnObjects: true }) as string[]
 
-  const setLanguage = (lng: 'en' | 'fi') => {
-    i18n.changeLanguage(lng)
-    document.documentElement.lang = lng
+  const navItems: NavItem[] = [
+    { label: navLabels[0] ?? 'Home', id: 'hero' },
+    { label: navLabels[1] ?? 'About', id: 'about' },
+    { label: navLabels[2] ?? 'Tech Stack', id: 'tech-stack' },
+    { label: navLabels[3] ?? 'Education', id: 'education' },
+    { label: navLabels[4] ?? 'Certificates', id: 'certificates' },
+    { label: navLabels[5] ?? 'Projects', id: 'projects' },
+    { label: navLabels[6] ?? 'Currently', id: 'current-work' },
+    { label: navLabels[7] ?? 'Contact', id: 'contact' },
+  ]
+
+  const scrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId)
+    el?.scrollIntoView({ behavior: 'smooth' })
+    setIsMenuOpen(false)
+    setActiveSection(sectionId)
   }
 
   useEffect(() => {
@@ -37,29 +165,9 @@ export function Navigation() {
     }
   }, [darkMode])
 
-  const navItems = [
-    { label: 'Home', id: 'hero' },
-    { label: 'About', id: 'about' },
-    { label: 'Tech Stack', id: 'tech-stack' },
-    { label: 'Education', id: 'education' },
-    { label: 'Certificates', id: 'certificates' },
-    { label: 'Projects', id: 'projects' },
-    { label: 'Currently', id: 'current-work' },
-    { label: 'Contact', id: 'contact' },
-  ]
-
-  const scrollToSection = (sectionId: string) => {
-    const el = document.getElementById(sectionId)
-    el?.scrollIntoView({ behavior: 'smooth' })
-    setIsMenuOpen(false)
-    setActiveSection(sectionId)
-  }
-
-  // Observe sections to auto-highlight nav item
   useEffect(() => {
-    if (observerRef.current) {
-      observerRef.current.disconnect()
-    }
+    if (observerRef.current) observerRef.current.disconnect()
+
     observerRef.current = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -69,18 +177,21 @@ export function Navigation() {
         })
       },
       {
-        // Trigger when section center crosses viewport center-ish
         root: null,
         threshold: 0.4,
         rootMargin: '0px 0px -20% 0px',
       }
     )
+
     navItems.forEach(({ id }) => {
       const el = document.getElementById(id)
       if (el) observerRef.current?.observe(el)
     })
+
     return () => observerRef.current?.disconnect()
-  }, []) // run once after mount
+    // navItems is static; safe to ignore deps here
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const linkBase = 'px-4 py-3 rounded-md text-base md:text-lg transition-colors'
   const inactive = 'text-foreground hover:text-primary'
@@ -94,94 +205,42 @@ export function Navigation() {
           <div className='flex-shrink-0'>
             <span className='text-2xl md:text-3xl font-medium'></span>
           </div>
+
           {/* Desktop Navigation */}
           <div className='hidden md:block'>
-            <div className='ml-10 flex items-baseline space-x-4'>
-              {navItems.map((item) => {
-                const isActive = activeSection === item.id
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    aria-current={isActive ? 'page' : undefined}
-                    className={`${linkBase} ${isActive ? active : inactive}`}
-                  >
-                    {item.label}
-                  </button>
-                )
-              })}
-            </div>
+            <NavLinks
+              items={navItems}
+              activeSection={activeSection}
+              onClick={scrollToSection}
+              className='ml-10 flex items-baseline space-x-4'
+              linkBase={linkBase}
+              activeClassName={active}
+              inactiveClassName={inactive}
+            />
           </div>
+
           {/* Desktop Actions */}
-          <div className='hidden md:flex items-center space-x-2'>
-            <GithubButton />
-            <LinkedinButton />
-            <LanguageSelect />
-            <ThemeToggleButton
-              darkMode={darkMode}
-              onToggle={() => setDarkMode(!darkMode)}
-            />
-            <div className='md:hidden flex items-center space-x-2'>
-              <LanguageSelect />
-              <Button
-                variant='ghost'
-                size='sm'
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-              >
-                {isMenuOpen ? (
-                  <X className='h-4 w-4' />
-                ) : (
-                  <Menu className='h-4 w-4' />
-                )}
-              </Button>
-            </div>
-          </div>
-          {/* Mobile menu button */}
-          <div className='md:hidden flex items-center space-x-2'>
-            <GithubButton />
-            <LinkedinButton />
-            <LanguageSelect />
-            <ThemeToggleButton
-              darkMode={darkMode}
-              onToggle={() => setDarkMode(!darkMode)}
-            />
-            <Button
-              variant='ghost'
-              size='sm'
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-            >
-              {isMenuOpen ? (
-                <X className='h-4 w-4' />
-              ) : (
-                <Menu className='h-4 w-4' />
-              )}
-            </Button>
-          </div>
+          <DesktopActions
+            darkMode={darkMode}
+            onToggleTheme={() => setDarkMode(!darkMode)}
+          />
+
+          {/* Mobile Actions */}
+          <MobileActions
+            darkMode={darkMode}
+            onToggleTheme={() => setDarkMode(!darkMode)}
+            isMenuOpen={isMenuOpen}
+            onToggleMenu={() => setIsMenuOpen(!isMenuOpen)}
+          />
         </div>
+
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className='md:hidden'>
-            <div className='px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border'>
-              {navItems.map((item) => {
-                const isActive = activeSection === item.id
-                return (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    aria-current={isActive ? 'page' : undefined}
-                    className={`block w-full text-left px-4 py-3 rounded-md text-lg transition-colors ${
-                      isActive
-                        ? 'text-primary font-medium'
-                        : 'text-foreground hover:text-primary'
-                    }`}
-                  >
-                    {item.label}
-                  </button>
-                )
-              })}
-              <div className='flex items-center space-x-2 px-3 py-2'></div>
-            </div>
-          </div>
+          <MobileMenu
+            items={navItems}
+            activeSection={activeSection}
+            onNavClick={scrollToSection}
+          />
         )}
       </div>
     </nav>
