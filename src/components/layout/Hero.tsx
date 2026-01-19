@@ -1,10 +1,11 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { motion } from 'framer-motion'
-import { ArrowDown, Divide } from 'lucide-react'
+import { ArrowDown } from 'lucide-react'
 
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
 import LightRays from '../ui/effects/LightRays'
+import AboutMe from './AboutMe'
 
 function useDelayedTrue(delayMs: number) {
   const [value, setValue] = useState(false)
@@ -96,7 +97,7 @@ function HeroText({
 }) {
   return (
     <motion.div
-      className='w-full lg:w-1/2 text-center lg:text-left space-y-8'
+      className='w-full text-center lg:text-left space-y-8'
       {...fadeInLeft}
       transition={{ duration: 0.7, ease: 'easeOut' }}
     >
@@ -131,7 +132,7 @@ function HeroText({
           </p>
         </motion.div>
       </div>
-
+      {/* 
       <motion.p
         className='text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto lg:mx-0 leading-relaxed'
         {...fadeInUp}
@@ -140,7 +141,7 @@ function HeroText({
         Driven by tech. Thriving in dynamic environments. Valuing collaboration.
         Open to new challenges. Eager to make an impact.
       </motion.p>
-
+*/}
       <motion.div
         className='flex flex-wrap gap-3 justify-center lg:justify-start'
         {...fadeInUp}
@@ -187,61 +188,12 @@ function HeroText({
   )
 }
 
-function HeroImage() {
-  return (
-    <motion.div
-      className='w-full lg:w-1/2 flex justify-center lg:justify-end mb-8 lg:mb-0'
-      {...fadeInRight}
-      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.27 }}
-    >
-      <div className='relative inline-block'>
-        <motion.div
-          aria-hidden
-          className='absolute inset-0 rounded-full border-2 border-primary/10 scale-110'
-          animate={{ rotate: 360 }}
-          transition={{ duration: 22, repeat: Infinity, ease: 'linear' }}
-        />
-        <motion.div
-          aria-hidden
-          className='absolute inset-0 rounded-full border border-accent/30 scale-125'
-          animate={{ rotate: -360 }}
-          transition={{ duration: 32, repeat: Infinity, ease: 'linear' }}
-        />
-
-        <div className='w-80 max-w-xs md:w-96 relative'>
-          <motion.div
-            aria-hidden
-            className='absolute inset-0 bg-primary/10 rounded-full blur-2xl'
-            animate={{ opacity: [0.4, 0.7, 0.4], scale: [1, 1.06, 1] }}
-            transition={{
-              duration: 5,
-              repeat: Infinity,
-              ease: 'easeInOut',
-            }}
-          />
-          {/* Keep your ImageWithFallback block here if you re-enable it */}
-        </div>
-
-        <motion.div
-          className='absolute -bottom-2 -right-2 w-8 h-8 bg-green-500 rounded-full border-2 border-background shadow'
-          animate={{ scale: [1, 1.18, 1] }}
-          transition={{
-            duration: 2.2,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      </div>
-    </motion.div>
-  )
-}
-
 function ScrollCta({ onClick }: { onClick: () => void }) {
   return (
     <motion.button
       type='button'
       onClick={onClick}
-      aria-label='Scroll to projects'
+      aria-label='Scroll to about'
       className='absolute bottom-2 pt-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
@@ -278,9 +230,21 @@ export function Hero() {
       <HeroBackground showRays={showRays} />
 
       <div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-20 w-full'>
-        <div className='flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-20'>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center'>
+          {/* Left: original hero content */}
           <HeroText achievements={achievements} onPrimaryCta={goToAbout} />
-          {/*<HeroImage >*/}
+
+          {/* Right: AboutMe content */}
+          <motion.div
+            {...fadeInRight}
+            transition={{ duration: 0.7, ease: 'easeOut', delay: 0.1 }}
+            className='w-full'
+          >
+            {/* Avoid nested section spacing; AboutMe already has padding but we want it in-place */}
+            <div className='lg:pl-4'>
+              <AboutMe />
+            </div>
+          </motion.div>
         </div>
 
         <ScrollCta onClick={goToAbout} />

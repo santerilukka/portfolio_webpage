@@ -39,5 +39,9 @@
       "Innovation",
       "Management"
     ]
+  },
+  "currentWork": {
+    "title": "Currently Working On",
+    "subtitle": "Active focus areas, learning initiatives, and ongoing build efforts."
   }
 }

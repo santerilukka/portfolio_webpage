@@ -139,7 +139,6 @@ export function Navigation() {
 
   const navItems: NavItem[] = [
     { label: navLabels[0] ?? 'Home', id: 'hero' },
-    { label: navLabels[1] ?? 'About', id: 'about' },
     { label: navLabels[2] ?? 'Tech Stack', id: 'tech-stack' },
     { label: navLabels[3] ?? 'Education', id: 'education' },
     { label: navLabels[4] ?? 'Certificates', id: 'certificates' },

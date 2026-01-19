@@ -1,10 +1,15 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
+
 import { Card } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { items } from '../../data/'
+import { aboutHighlights } from '../../data'
 
 export function CurrentlyWorkingOn() {
+  const { t } = useTranslation()
+
   return (
     <section id='current-work' className='py-20 px-4 sm:px-6 lg:px-8'>
       <div className='max-w-7xl mx-auto'>
@@ -16,13 +21,41 @@ export function CurrentlyWorkingOn() {
           viewport={{ once: true }}
         >
           <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-            Currently Working On
+            {t('currentWork.title')}
           </h2>
           <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-            Active focus areas, learning initiatives, and ongoing build efforts.
+            {t('currentWork.subtitle')}
           </p>
         </motion.div>
 
+        {/* Moved from AboutMe: Background / Focus Areas / Approach */}
+        <div className='grid md:grid-cols-3 gap-6 mb-12'>
+          {aboutHighlights.map((highlight, index) => (
+            <motion.div
+              key={highlight.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.12 }}
+              viewport={{ once: true }}
+            >
+              <Card className='p-6 h-full hover:shadow-md transition-shadow'>
+                <div className='flex flex-col items-center text-center space-y-3'>
+                  <div className='p-3 bg-primary/10 rounded-full'>
+                    <highlight.icon className='h-6 w-6 text-primary' />
+                  </div>
+                  <h3 className='font-medium'>
+                    {t(`about.highlights.${index}.title`)}
+                  </h3>
+                  <p className='text-sm text-muted-foreground'>
+                    {t(`about.highlights.${index}.description`)}
+                  </p>
+                </div>
+              </Card>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Existing "currently working on" items */}
         <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
           {items.map((item, i) => (
             <motion.div
