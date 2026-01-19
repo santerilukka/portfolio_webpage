@@ -3,6 +3,8 @@ import { Button } from '../ui/button'
 import { Moon, Sun, Github, Linkedin, Menu, X } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
 import { LanguageSelect } from '../layout/Buttons/LanguageSelect'
+import { GithubButton } from '../layout/Buttons/GitHubButton'
+import { LinkedinButton } from '../layout/Buttons/LinkedInButton'
 
 export function Navigation() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -111,24 +113,8 @@ export function Navigation() {
           </div>
           {/* Desktop Actions */}
           <div className='hidden md:flex items-center space-x-2'>
-            <Button variant='ghost' size='sm' asChild>
-              <a
-                href='https://github.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <Github className='h-4 w-4' />
-              </a>
-            </Button>
-            <Button variant='ghost' size='sm' asChild>
-              <a
-                href='https://linkedin.com'
-                target='_blank'
-                rel='noopener noreferrer'
-              >
-                <Linkedin className='h-4 w-4' />
-              </a>
-            </Button>
+            <GithubButton />
+            <LinkedinButton />
             <LanguageSelect />
             <Button
               variant='ghost'
@@ -158,6 +144,8 @@ export function Navigation() {
           </div>
           {/* Mobile menu button */}
           <div className='md:hidden flex items-center space-x-2'>
+            <GithubButton />
+            <LinkedinButton />
             <LanguageSelect />
             <Button
               variant='ghost'
@@ -204,26 +192,7 @@ export function Navigation() {
                   </button>
                 )
               })}
-              <div className='flex items-center space-x-2 px-3 py-2'>
-                <Button variant='ghost' size='sm' asChild>
-                  <a
-                    href='https://github.com'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <Github className='h-4 w-4' />
-                  </a>
-                </Button>
-                <Button variant='ghost' size='sm' asChild>
-                  <a
-                    href='https://linkedin.com'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                  >
-                    <Linkedin className='h-4 w-4' />
-                  </a>
-                </Button>
-              </div>
+              <div className='flex items-center space-x-2 px-3 py-2'></div>
             </div>
           </div>
         )}
