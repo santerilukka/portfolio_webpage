@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { LanguageSelect } from '../layout/Buttons/LanguageSelect'
 import { GithubButton } from '../layout/Buttons/GitHubButton'
 import { LinkedinButton } from '../layout/Buttons/LinkedInButton'
+import { ThemeToggleButton } from '../layout/Buttons/ThemeToggleButton'
 
 export function Navigation() {
   const [darkMode, setDarkMode] = useState<boolean>(() => {
@@ -116,17 +117,10 @@ export function Navigation() {
             <GithubButton />
             <LinkedinButton />
             <LanguageSelect />
-            <Button
-              variant='ghost'
-              size='sm'
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              {darkMode ? (
-                <Sun className='h-4 w-4' />
-              ) : (
-                <Moon className='h-4 w-4' />
-              )}
-            </Button>
+            <ThemeToggleButton
+              darkMode={darkMode}
+              onToggle={() => setDarkMode(!darkMode)}
+            />
             <div className='md:hidden flex items-center space-x-2'>
               <LanguageSelect />
               <Button
@@ -147,17 +141,10 @@ export function Navigation() {
             <GithubButton />
             <LinkedinButton />
             <LanguageSelect />
-            <Button
-              variant='ghost'
-              size='sm'
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              {darkMode ? (
-                <Sun className='h-4 w-4' />
-              ) : (
-                <Moon className='h-4 w-4' />
-              )}
-            </Button>
+            <ThemeToggleButton
+              darkMode={darkMode}
+              onToggle={() => setDarkMode(!darkMode)}
+            />
             <Button
               variant='ghost'
               size='sm'
