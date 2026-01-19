@@ -14,6 +14,13 @@
       "Contact"
     ]
   },
+  "languageSelect": {
+    "ariaLabel": "Language",
+    "languages": {
+      "en": "English",
+      "fi": "Suomi"
+    }
+  },
   "hero": {
     "ariaLabel": "Introduction",
     "name": "Santeri Lukka",

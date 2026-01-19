@@ -13,7 +13,7 @@ import {
 const STORAGE_KEY = 'lang'
 
 export function LanguageSelect() {
-  const { i18n } = useTranslation()
+  const { i18n, t } = useTranslation()
 
   const value: 'en' | 'fi' = i18n.language?.toLowerCase().startsWith('fi')
     ? 'fi'
@@ -32,7 +32,7 @@ export function LanguageSelect() {
   return (
     <Select value={value} onValueChange={(v) => setLanguage(v as 'en' | 'fi')}>
       <SelectTrigger
-        aria-label='Language'
+        aria-label={t('languageSelect.ariaLabel')}
         className='h-9 w-9 p-0 justify-center'
       >
         <SelectValue>
@@ -41,8 +41,8 @@ export function LanguageSelect() {
       </SelectTrigger>
 
       <SelectContent align='end'>
-        <SelectItem value='en'>English</SelectItem>
-        <SelectItem value='fi'>Suomi</SelectItem>
+        <SelectItem value='en'>{t('languageSelect.languages.en')}</SelectItem>
+        <SelectItem value='fi'>{t('languageSelect.languages.fi')}</SelectItem>
       </SelectContent>
     </Select>
   )

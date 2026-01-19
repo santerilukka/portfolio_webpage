@@ -135,17 +135,22 @@ export function Navigation() {
 
   const { t } = useTranslation()
 
-  const navLabels = t('nav.items', { returnObjects: true }) as string[]
+  const navLabelList = t('nav.items', { returnObjects: true }) as string[]
+  const navSectionIds = [
+    'hero',
+    'about',
+    'tech-stack',
+    'education',
+    'certificates',
+    'projects',
+    'current-work',
+    'contact',
+  ] as const
 
-  const navItems: NavItem[] = [
-    { label: navLabels[0] ?? 'Home', id: 'hero' },
-    { label: navLabels[2] ?? 'Tech Stack', id: 'tech-stack' },
-    { label: navLabels[3] ?? 'Education', id: 'education' },
-    { label: navLabels[4] ?? 'Certificates', id: 'certificates' },
-    { label: navLabels[5] ?? 'Projects', id: 'projects' },
-    { label: navLabels[6] ?? 'Currently', id: 'current-work' },
-    { label: navLabels[7] ?? 'Contact', id: 'contact' },
-  ]
+  const navItems: NavItem[] = navSectionIds.map((id, idx) => ({
+    id,
+    label: navLabelList[idx] ?? '',
+  }))
 
   const scrollToSection = (sectionId: string) => {
     const el = document.getElementById(sectionId)
@@ -188,8 +193,6 @@ export function Navigation() {
     })
 
     return () => observerRef.current?.disconnect()
-    // navItems is static; safe to ignore deps here
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const linkBase = 'px-4 py-3 rounded-md text-base md:text-lg transition-colors'
