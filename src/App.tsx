@@ -1,13 +1,10 @@
 import React, { useEffect } from 'react'
 import { Toaster } from './components/ui/sonner'
 import { Navigation } from './components/layout/Navigation'
-import { Hero } from './components/layout/Hero'
-import AboutMe from './components/layout/AboutMe'
-import { TechStack } from './components/layout/TechStack'
-import Education from './components/layout/Education'
-import { Certificates } from './components/layout/Certificates'
+import { Landing } from './components/layout/Landing'
+import { Secondary } from './components/layout/Secondary'
+import { Tertiary } from './components/layout/Tertiary'
 import { Projects } from './components/layout/Projects'
-import { CurrentlyWorkingOn } from './components/layout/CurrentlyWorkingOn'
 import { Contact } from './components/layout/Contact'
 import { Footer } from './components/layout/Footer'
 import ClickSpark from './components/ui/effects/ClickSparkEffect'
@@ -60,5 +57,31 @@ export default function App() {
     }
   }, [])
 
-  return <p>Under maintanance!</p>
+  //return <p>Under maintanance!</p>
+  return (
+    <ClickSpark
+      sparkColor='#3d72e6'
+      sparkSize={10}
+      sparkRadius={15}
+      sparkCount={10}
+      duration={450}
+      extraScale={1.2}
+    >
+      <div className='min-h-screen bg-background text-foreground'>
+        <Navigation />
+
+        <main>
+          <Landing />
+          <Secondary />
+          <Tertiary />
+          <Projects />
+          {/*<Contact />*/}
+        </main>
+
+        <Footer />
+
+        <Toaster />
+      </div>
+    </ClickSpark>
+  )
 }
