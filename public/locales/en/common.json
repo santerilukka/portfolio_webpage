@@ -325,7 +325,7 @@
   "projects": {
     "title": "Projects",
     "subtitle": "A collection of projects that showcase my skills and passion for development",
-    "featuredTitle": "Featured Projects",
+    "featuredTitle": "Projects",
     "otherTitle": "Other Projects",
     "badges": {
       "featured": "Featured"

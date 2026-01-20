@@ -39,20 +39,13 @@ export function Projects() {
   return (
     <section id='projects' className='py-20 bg-secondary/20'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-            {t('projects.title')}
-          </h2>
-          <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-            {t('projects.subtitle')}
-          </p>
-        </div>
+        <div className='text-center mb-16'></div>
 
         {/* Featured Projects */}
         <div className='mb-16'>
-          <h3 className='text-2xl font-medium mb-8'>
+          <h2 className='text-3xl font-medium mb-8'>
             {t('projects.featuredTitle')}
-          </h3>
+          </h2>
 
           <div className='grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8'>
             {featuredProjects.map((project, index) => (
