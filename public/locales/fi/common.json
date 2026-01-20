@@ -3,41 +3,525 @@
     "title": "Portfolio"
   },
   "nav": {
-    "items": [
-      "Etusivu",
-      "Tietoa",
-      "Teknologiat",
-      "Koulutus",
-      "Sertifikaatit",
-      "Projektit",
-      "Työn alla",
-      "Yhteys"
-    ]
+    "labels": {
+      "home": "Etusivu",
+      "about": "Tietoa",
+      "more": "Lisää",
+      "projects": "Projektit",
+      "contact": "Yhteys"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Esittely",
+    "name": "Santeri Lukka",
+    "subtitle": "24-vuotias IT- ja IEM-yliopisto-opiskelija",
+    "cta": {
+      "primary": "Katso työni",
+      "secondary": "Ota yhteyttä"
+    }
+  },
+  "landing": {
+    "ariaLabel": "Hero-osio",
+    "scrollCta": {
+      "ariaLabel": "Vieritä seuraavaan osioon",
+      "label": "Vieritä alas"
+    }
   },
   "about": {
+    "available": "Avoinna mahdollisuuksille",
     "title": "Tietoa minusta",
-    "description": "I'm a dedicated student pursuing IT and IEM. My journey combines both technical knowledge about the huge world of Information Tehcnology with business and management aspects. I'm committed to life long learning and growth in the tech world.",
+    "description": "Teknologiasta innostunut ja tiimityössä viihtyvä tekijä. Olen aina avoin uusille mahdollisuuksille ja haluan olla mukana projekteissa, joilla on merkitystä.",
     "highlights": [
       {
-        "title": "Background",
-        "description": "IT & IEM M.Sc. student with a passion for technology and business"
+        "title": "Tausta",
+        "description": "teknologian, johtamisen ja liiketoimintaopintojen parissa",
+        "icon": "sparkles"
       },
       {
-        "title": "Focus Areas",
-        "description": "Software Engineering, IS/IT Management, Corporate Strategy "
+        "title": "Kiinnostuksen kohteet",
+        "description": "ohjelmistotuotanto, IS/IT-johtaminen, yritysstrategia",
+        "icon": "target"
       },
       {
-        "title": "Approach",
-        "description": "Problem-solving & improvement mindset driven by curiosity and innovation"
+        "title": "Lähestymistapa",
+        "description": "jatkuva oppiminen ja ongelmanratkaisu uteliaisuuden ohjaamana",
+        "icon": "rocket"
       }
     ],
-    "strengthsTitle": "Strengths",
+    "strengthsTitle": "Vahvuudet",
+    "stats": {
+      "technologies": "Opitut teknologiat",
+      "yearsLearning": "Oppimisvuodet",
+      "projectsBuilt": "Rakennetut projektit"
+    },
     "skills": [
-      "Problem Solving",
-      "Team Collaboration",
-      "Continuous Learning",
-      "Innovation",
-      "Management"
+      "Ongelmanratkaisu",
+      "Tiimityö",
+      "Jatkuva oppiminen",
+      "Innovointi",
+      "Johtaminen"
     ]
+  },
+  "languageSelect": {
+    "ariaLabel": "Kieli",
+    "languages": {
+      "en": "English",
+      "fi": "Suomi"
+    }
+  },
+  "languages": ["Englanti", "Suomi", "Ruotsi"],
+  "currentWork": {
+    "title": "Työn alla",
+    "subtitle": "Aktiiviset fokusalueet, oppimisaloitteet ja käynnissä olevat toteutukset.",
+    "highlights": [
+      {
+        "title": "Tausta",
+        "description": "teknologian, johtamisen ja liiketoimintaopintojen parissa",
+        "icon": "sparkles"
+      },
+      {
+        "title": "Kiinnostuksen kohteet",
+        "description": "ohjelmistotuotanto, IS/IT-johtaminen, yritysstrategia",
+        "icon": "target"
+      },
+      {
+        "title": "Lähestymistapa",
+        "description": "jatkuva oppiminen ja ongelmanratkaisu uteliaisuuden ohjaamana",
+        "icon": "rocket"
+      }
+    ],
+    "items": [
+      {
+        "title": "Henkilökohtaisen sivuston päivitys",
+        "description": "Tämän sivuston uudelleenrakennus web-teknologioilla",
+        "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"]
+      },
+      {
+        "title": "Yritysarkkitehtuuri",
+        "description": "Kurssi yritysten arkkitehtuureista",
+        "stack": ["ITIL", "TOGAF", "EIRA"]
+      },
+      {
+        "title": "Modernit käyttöliittymät",
+        "description": "Maisteritason kurssi moderneista käyttöliittymistä",
+        "stack": ["JavaFX", "GUI", "UI/UX"]
+      }
+    ]
+  },
+  "tech": {
+    "title": "Teknologiakokonaisuus",
+    "subtitle": "Teknologiat ja työkalut, joilla toteutan ideoita",
+    "carouselAria": "Jatkuvasti vierivä lista teknologioista",
+    "technologies": [
+      {
+        "name": "React",
+        "icon": "⚛️",
+        "color": "text-blue-500",
+        "link": "https://react.dev/"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "🔷",
+        "color": "text-blue-600",
+        "link": "https://www.typescriptlang.org/"
+      },
+      {
+        "name": "Node.js",
+        "icon": "🟢",
+        "color": "text-green-500",
+        "link": "https://nodejs.org/"
+      },
+      {
+        "name": "Python",
+        "icon": "🐍",
+        "color": "text-yellow-500",
+        "link": "https://www.python.org/"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "🟨",
+        "color": "text-yellow-400",
+        "link": "https://developer.mozilla.org/docs/Web/JavaScript"
+      },
+      {
+        "name": "Vite",
+        "icon": "⚡",
+        "color": "text-purple-500",
+        "link": "https://vitejs.dev/"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "🎨",
+        "color": "text-cyan-500",
+        "link": "https://tailwindcss.com/"
+      },
+      {
+        "name": "Git",
+        "icon": "📁",
+        "color": "text-orange-500",
+        "link": "https://git-scm.com/"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "🍃",
+        "color": "text-green-600",
+        "link": "https://www.mongodb.com/"
+      },
+      {
+        "name": "Next.js",
+        "icon": "▲",
+        "color": "text-gray-800 dark:text-white",
+        "link": "https://nextjs.org/"
+      },
+      {
+        "name": "Express",
+        "icon": "🚀",
+        "color": "text-gray-600",
+        "link": "https://expressjs.com/"
+      },
+      {
+        "name": "Java",
+        "icon": "☕",
+        "color": "text-red-600",
+        "link": "https://www.java.com/"
+      },
+      {
+        "name": "SQLite",
+        "icon": "🗄️",
+        "color": "text-blue-700",
+        "link": "https://www.sqlite.org/"
+      },
+      {
+        "name": "Vercel",
+        "icon": "⬆️",
+        "color": "text-black",
+        "link": "https://vercel.com/"
+      },
+      {
+        "name": "Figma",
+        "icon": "🎨",
+        "color": "text-purple-600",
+        "link": "https://www.figma.com/"
+      }
+    ],
+    "toolsMenu": {
+      "title": "Työkalut",
+      "items": [
+        { "name": "Microsoft Word" },
+        { "name": "Microsoft Excel" },
+        { "name": "Microsoft PowerPoint" },
+        { "name": "Microsoft Teams" }
+      ]
+    },
+    "stats": {
+      "technologies": {
+        "label": "Teknologiat",
+        "from": 10,
+        "to": 15,
+        "duration": 0.2,
+        "suffix": "+"
+      },
+      "yearsLearning": {
+        "label": "Oppimisvuodet",
+        "from": 0,
+        "to": 3,
+        "duration": 0.4,
+        "suffix": "+"
+      },
+      "projectsBuilt": {
+        "label": "Rakennetut projektit",
+        "from": 0,
+        "to": 20,
+        "duration": 0.6,
+        "suffix": "+"
+      },
+      "certifications": {
+        "label": "Sertifikaatit",
+        "from": 0,
+        "to": 5,
+        "duration": 0.8,
+        "suffix": "+"
+      }
+    }
+  },
+  "education": {
+    "title": "Koulutus",
+    "subtitle": "Akateeminen polkuni ja jatkuva oppiminen",
+    "gpaLabel": "Keskiarvo",
+    "keyCourses": "Keskeiset kurssit",
+    "items": [
+      {
+        "degree": "DI / IT",
+        "major": "Ohjelmistotekniikka",
+        "school": "Turun yliopisto",
+        "location": "Turku",
+        "period": "2025 - 2027",
+        "status": "Kesken",
+        "gpa": "3.5 / 5",
+        "description": "Painotus ohjelmistokehitykseen, tietokantoihin ja järjestelmäanalyysiin.",
+        "courses": [
+          {
+            "name": "Suunnittelu ja arkkitehtuuri",
+            "link": "https://en.wikipedia.org/wiki/Software_design"
+          },
+          {
+            "name": "Agile-menetelmät",
+            "link": "https://en.wikipedia.org/wiki/Agile_software_development"
+          }
+        ]
+      },
+      {
+        "degree": "DI",
+        "major": "Teollisuustalous ja johtaminen",
+        "school": "Tampereen yliopisto",
+        "location": "Boston, MA",
+        "period": "2022 - 2026",
+        "status": "Kesken",
+        "gpa": "3.7/4.0",
+        "description": "Erikoistuminen prosessien optimointiin, laadunhallintaan ja projektijohtamiseen.",
+        "courses": [
+          {
+            "name": "Operaatioanalyysi",
+            "link": "https://en.wikipedia.org/wiki/Operations_research"
+          },
+          {
+            "name": "Laadunhallinta",
+            "link": "https://en.wikipedia.org/wiki/Quality_management"
+          },
+          {
+            "name": "Toimitusketju",
+            "link": "https://en.wikipedia.org/wiki/Supply_chain_management"
+          },
+          {
+            "name": "Tilastotiede",
+            "link": "https://en.wikipedia.org/wiki/Statistics"
+          }
+        ]
+      },
+      {
+        "degree": "Tekniikan kandidaatti",
+        "major": "Tietotekniikka",
+        "school": "Turun yliopisto",
+        "location": "Turku, Suomi",
+        "period": "2022 - 2025",
+        "status": "Valmistunut",
+        "gpa": "4 / 5",
+        "description": "Painotus ohjelmistokehitykseen, tietokantoihin ja järjestelmäanalyysiin.",
+        "courses": [
+          {
+            "name": "Tietorakenteet",
+            "link": "https://en.wikipedia.org/wiki/Data_structure"
+          },
+          {
+            "name": "Ohjelmistotuotanto",
+            "link": "https://en.wikipedia.org/wiki/Software_engineering"
+          },
+          {
+            "name": "Tietokannat",
+            "link": "https://en.wikipedia.org/wiki/Database"
+          },
+          {
+            "name": "Web-kehitys",
+            "link": "https://developer.mozilla.org/docs/Learn"
+          }
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "title": "Sertifikaatit",
+    "subtitle": "Ammatilliset sertifikaatit ja saavutukset, jotka osoittavat osaamista",
+    "credentialId": "Tunniste",
+    "skillsCovered": "Kattamat taidot",
+    "view": "Näytä sertifikaatti",
+    "items": [
+      {
+        "title": "Full Stack Web Development",
+        "issuer": "MOOC, Helsingin yliopisto",
+        "date": "2/2025",
+        "credentialId": "FCC-11111",
+        "status": "Aktiivinen",
+        "skills": ["JavaScript", "React", "Node.js", "HTML/CSS", "MongoDB"],
+        "link": "#"
+      },
+      {
+        "title": "Projektinhallinnan perusteet",
+        "issuer": "Projektiammattilaiset PRY",
+        "date": "12/2023",
+        "credentialId": "GH-22222",
+        "status": "Aktiivinen",
+        "skills": ["Projektinhallinta", "IPMA"],
+        "link": "#"
+      }
+    ],
+    "stats": {
+      "earned": { "value": "6", "label": "Suoritetut sertifikaatit" },
+      "platforms": { "value": "4", "label": "Suuret alustat" },
+      "validated": { "value": "18+", "label": "Vahvistetut taidot" },
+      "active": { "value": "100%", "label": "Aktiivinen tila" }
+    }
+  },
+  "projects": {
+    "title": "Projektit",
+    "subtitle": "Kokoelma projekteja, jotka esittelevät osaamistani ja intohimoani kehitykseen",
+    "featuredTitle": "Projektit",
+    "otherTitle": "Muut projektit",
+    "badges": {
+      "featured": "Nosto"
+    },
+    "links": {
+      "live": "Live",
+      "code": "Koodi",
+      "liveDemo": "Live-demo",
+      "github": "GitHub",
+      "liveAria": "Avaa projekti",
+      "githubAria": "Avaa GitHub-repositorio"
+    },
+    "cta": {
+      "text": "Haluatko nähdä lisää töitäni?",
+      "button": "Näytä kaikki GitHubissa",
+      "githubUrl": "https://github.com"
+    },
+    "items": [
+      {
+        "title": "Tämä sivusto, jota luet",
+        "description": "Henkilökohtainen portfolio-sivusto, joka esittelee projektini, taitoni ja kokemukseni modernilla ja responsiivisella suunnittelulla.",
+        "imageKey": "portfolioWebsite",
+        "technologies": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "Stripe",
+          "Tailwind CSS"
+        ],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "UI → Ostoslista-sovellus",
+        "description": "Sovelluksen käyttöliittymä, jonka avulla käyttäjät voivat hallita ostoslistojaan. Tehty Figmalla osana UI/UX-kurssia.",
+        "imageKey": "figmaUI",
+        "technologies": ["Figma", "UI/UX"],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Data Analytics Dashboard",
+        "description": "Interaktiivinen dashboard JSON/CSV-datan (esim. liiketoimintamittarit ja KPI:t) visualisointiin eri kaavioilla (pylväs, viiva, piirakka).",
+        "imageKey": "dataVisualizer",
+        "technologies": ["JavaFX", "MVC", "CSV/JSON-parsing", "Charts"],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Portfoliosivusto",
+        "description": "Responsiivinen portfoliosivusto, joka esittelee projektini, taitoni ja kokemukseni modernien suunnitteluperiaatteiden mukaisesti.",
+        "imageKey": "portfolioSite",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": false
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ota yhteyttä",
+    "subtitle": "Olen aina avoin keskustelemaan uusista mahdollisuuksista, yhteistyöstä tai muuten vain teknologiasta",
+    "formTitle": "Lähetä viesti",
+    "form": {
+      "name": { "label": "Nimi", "placeholder": "Nimesi" },
+      "email": {
+        "label": "Sähköposti",
+        "placeholder": "sinun.sahkoposti@example.com"
+      },
+      "subject": { "label": "Aihe", "placeholder": "Mistä on kyse?" },
+      "message": {
+        "label": "Viesti",
+        "placeholder": "Kerro projektistasi tai sano vain hei!"
+      },
+      "submit": "Lähetä viesti",
+      "toastSuccess": "Viesti lähetetty! Palaan asiaan pian."
+    },
+    "infoTitle": "Yhteystiedot",
+    "connectTitle": "Ota yhteyttä somessa",
+    "contactInfo": [
+      {
+        "type": "email",
+        "label": "Sähköposti",
+        "value": "@email.com",
+        "link": "mailto:@email.com"
+      },
+      {
+        "type": "phone",
+        "label": "Puhelin",
+        "value": "+1 (555) 123-4567",
+        "link": "tel:+15551234567"
+      },
+      {
+        "type": "location",
+        "label": "Sijainti",
+        "value": "Kaupunki, Osavaltio, USA"
+      }
+    ],
+    "socialLinks": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "link": "https://github.com/santerilukka",
+        "username": "@santerilukka"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "link": "https://linkedin.com/in/santerilukka",
+        "username": "/in/santerilukka"
+      }
+    ],
+    "quickResponse": {
+      "title": "Nopea vastaus",
+      "description": "Vastaan yleensä viesteihin 24 tunnin sisällä. Kiireellisissä asioissa voit olla yhteydessä puhelimitse tai LinkedInissä.",
+      "indicator": "Vastaa yleensä vuorokauden sisällä"
+    }
+  },
+  "footer": {
+    "brandName": "Santeri Lukka",
+    "aboutBlurb": "Intohimoinen teknologiasta, jatkuvasta oppimisesta ja vaikuttavien ratkaisujen rakentamisesta",
+    "quickLinksTitle": "Pikalinkit",
+    "quickLinks": [
+      { "label": "Tietoa", "href": "#about" },
+      { "label": "Projektit", "href": "#projects" },
+      { "label": "Koulutus", "href": "#education" }
+    ],
+    "contactTitle": "Ota yhteyttä",
+    "contact": {
+      "email": "firstname.lastname [[at]] gmail.com",
+      "phone": "+0 (555) 123-4567",
+      "location": "Kaupunki, Osavaltio, MAA",
+      "ctaLabel": "Ota yhteyttä",
+      "ctaHref": "#contact"
+    },
+    "socialLinks": [
+      { "type": "github", "label": "GitHub", "href": "https://github.com" },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://linkedin.com"
+      },
+      { "type": "email", "label": "Sähköposti", "href": "mailto:.@email.com" }
+    ],
+    "bottom": {
+      "copyrightPrefix": "© {{year}} Santeri Lukka. Tehty Reactilla, Tailwind CSS:llä ja",
+      "privacyPolicy": "Tietosuojakäytäntö",
+      "termsOfService": "Käyttöehdot"
+    },
+    "backToTopAriaLabel": "Takaisin ylös"
   }
 }
