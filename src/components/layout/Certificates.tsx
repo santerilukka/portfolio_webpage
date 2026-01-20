@@ -4,6 +4,7 @@ import { Badge } from '../ui/badge'
 import { Award, ExternalLink, Calendar } from 'lucide-react'
 import GlareHover from '../ui/effects/GlareHoverEffect'
 import { useTranslation } from 'react-i18next'
+import { motion } from 'framer-motion'
 
 type CertificatesProps = {
   asSection?: boolean
@@ -50,81 +51,95 @@ export function Certificates({
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
         {items.map((cert, index) => (
-          <GlareHover
+          <motion.div
             key={`${cert.title}-${index}`}
-            width='100%'
-            height='100%'
-            background='transparent'
-            borderColor='transparent'
-            glareColor='#3d72e6'
-            glareOpacity={0.1}
-            glareAngle={-35}
-            glareSize={300}
-            transitionDuration={700}
-            playOnce={false}
-            className='rounded-md'
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className='h-full'
           >
-            <Card className='w-full h-full p-6 hover:shadow-lg transition-all duration-300 group'>
-              <div className='flex items-start justify-between mb-4'>
-                <div className='p-3 bg-primary/10 rounded-full'>
-                  <Award className='h-6 w-6 text-primary' />
-                </div>
-                {cert.status && (
-                  <Badge variant='secondary' className='text-xs'>
-                    {cert.status}
-                  </Badge>
-                )}
-              </div>
-
-              <div className='space-y-4'>
-                <div>
-                  <h3 className='font-medium mb-2 group-hover:text-primary transition-colors'>
-                    {cert.title}
-                  </h3>
-                  <p className='text-sm text-muted-foreground'>{cert.issuer}</p>
-                </div>
-
-                <div className='flex items-center space-x-2 text-sm text-muted-foreground'>
-                  <Calendar className='h-4 w-4' />
-                  <span>{cert.date}</span>
-                </div>
-
-                <div>
-                  <p className='text-xs text-muted-foreground mb-2'>
-                    {t('certificates.credentialId')}:
-                  </p>
-                  <p className='text-sm font-mono bg-secondary/50 px-2 py-1 rounded text-xs'>
-                    {cert.credentialId}
-                  </p>
-                </div>
-
-                <div>
-                  <p className='text-sm font-medium mb-2'>
-                    {t('certificates.skillsCovered')}:
-                  </p>
-                  <div className='flex flex-wrap gap-1'>
-                    {cert.skills.map((skill) => (
-                      <Badge key={skill} variant='outline' className='text-xs'>
-                        {skill}
-                      </Badge>
-                    ))}
+            <GlareHover
+              width='100%'
+              height='100%'
+              background='transparent'
+              borderColor='transparent'
+              glareColor='#3d72e6'
+              glareOpacity={0.1}
+              glareAngle={-35}
+              glareSize={300}
+              transitionDuration={700}
+              playOnce={false}
+              className='rounded-md h-full'
+            >
+              <Card className='w-full h-full p-6 hover:shadow-lg transition-all duration-300 group flex flex-col'>
+                <div className='flex items-start justify-between mb-4'>
+                  <div className='p-3 bg-primary/10 rounded-full'>
+                    <Award className='h-6 w-6 text-primary' />
                   </div>
+                  {cert.status && (
+                    <Badge variant='secondary' className='text-xs'>
+                      {cert.status}
+                    </Badge>
+                  )}
                 </div>
 
-                {cert.link && (
-                  <div className='pt-2'>
-                    <a
-                      href={cert.link}
-                      className='inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors'
-                    >
-                      {t('certificates.view')}
-                      <ExternalLink className='ml-1 h-3 w-3' />
-                    </a>
+                <div className='space-y-4'>
+                  <div>
+                    <h3 className='font-medium mb-2 group-hover:text-primary transition-colors'>
+                      {cert.title}
+                    </h3>
+                    <p className='text-sm text-muted-foreground'>
+                      {cert.issuer}
+                    </p>
                   </div>
-                )}
-              </div>
-            </Card>
-          </GlareHover>
+
+                  <div className='flex items-center space-x-2 text-sm text-muted-foreground'>
+                    <Calendar className='h-4 w-4' />
+                    <span>{cert.date}</span>
+                  </div>
+
+                  <div>
+                    <p className='text-xs text-muted-foreground mb-2'>
+                      {t('certificates.credentialId')}:
+                    </p>
+                    <p className='text-sm font-mono bg-secondary/50 px-2 py-1 rounded text-xs'>
+                      {cert.credentialId}
+                    </p>
+                  </div>
+
+                  <div>
+                    <p className='text-sm font-medium mb-2'>
+                      {t('certificates.skillsCovered')}:
+                    </p>
+                    <div className='flex flex-wrap gap-1'>
+                      {cert.skills.map((skill) => (
+                        <Badge
+                          key={skill}
+                          variant='outline'
+                          className='text-xs'
+                        >
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  {cert.link && (
+                    <div className='pt-2'>
+                      <a
+                        href={cert.link}
+                        className='inline-flex items-center text-sm text-primary hover:text-primary/80 transition-colors'
+                      >
+                        {t('certificates.view')}
+                        <ExternalLink className='ml-1 h-3 w-3' />
+                      </a>
+                    </div>
+                  )}
+                </div>
+              </Card>
+            </GlareHover>
+          </motion.div>
         ))}
       </div>
 
