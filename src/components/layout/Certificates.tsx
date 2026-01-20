@@ -100,12 +100,12 @@ export function Certificates({
                   </div>
 
                   <div>
-                    <p className='text-xs text-muted-foreground mb-2'>
+                    {/*<p className='text-xs text-muted-foreground mb-2'>
                       {t('certificates.credentialId')}:
                     </p>
                     <p className='text-sm font-mono bg-secondary/50 px-2 py-1 rounded text-xs'>
                       {cert.credentialId}
-                    </p>
+                    </p>*/}
                   </div>
 
                   <div>

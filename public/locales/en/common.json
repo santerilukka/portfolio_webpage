@@ -293,20 +293,20 @@
     "items": [
       {
         "title": "Full Stack Web Development",
-        "issuer": "freeCodeCamp",
-        "date": "August 2023",
+        "issuer": "MOOC, University of Helsinki",
+        "date": "2/2025",
         "credentialId": "FCC-11111",
         "status": "Active",
-        "skills": ["HTML/CSS", "JavaScript", "Node.js", "MongoDB"],
+        "skills": ["JavaScript", "React", "Node.js", "HTML/CSS", "MongoDB"],
         "link": "#"
       },
       {
-        "title": "Git & GitHub Essentials",
-        "issuer": "GitHub",
-        "date": "June 2023",
+        "title": "Foundation Certificate in Project Management",
+        "issuer": "Projektiammattilaiset PRY",
+        "date": "12/2023",
         "credentialId": "GH-22222",
         "status": "Active",
-        "skills": ["Git", "Version Control", "Collaboration"],
+        "skills": ["Project Management", "IPMA"],
         "link": "#"
       }
     ],
