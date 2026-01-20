@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { GraduationCap, Calendar, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
+import BookOpen from 'lucide-react/dist/esm/icons/book-open.js'
 
 type EducationProps = {
   asSection?: boolean
@@ -17,6 +18,7 @@ type EducationCourse = {
 
 type EducationItemI18n = {
   degree: string
+  major?: string
   school: string
   location?: string
   period: string
@@ -50,7 +52,7 @@ export default function Education({
         </h2>
       </motion.div>
 
-      <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>
+      <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-2'>
         {items.map((edu, index) => (
           <motion.div
             key={`${edu.degree}-${index}`}
@@ -83,13 +85,20 @@ export default function Education({
                   {edu.degree}
                 </CardTitle>
 
+                {edu.major && (
+                  <div className='flex items-center text-sm text-muted-foreground mt-1'>
+                    <BookOpen className='w-4 h-4 mr-2' />
+                    <span>{edu.major}</span>
+                  </div>
+                )}
+
                 <div className='space-y-2 text-sm text-muted-foreground'>
                   <div className='flex items-center'>
                     <MapPin className='w-4 h-4 mr-2' />
                     {edu.school}
                   </div>
 
-                  <div className='flex items-center'>
+                  {/*<div className='flex items-center'>
                     <Calendar className='w-4 h-4 mr-2' />
                     {edu.period}
                   </div>
@@ -102,7 +111,7 @@ export default function Education({
                     <div className='font-medium text-foreground'>
                       {t('education.gpaLabel')}: {edu.gpa}
                     </div>
-                  )}
+                  )}*/}
                 </div>
               </CardHeader>
 

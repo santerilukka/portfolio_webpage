@@ -207,35 +207,29 @@
     "keyCourses": "Key Courses",
     "items": [
       {
-        "degree": "M.Sc. Software Engineering",
+        "degree": "M.Sc. in Tech / IT",
+        "major": "Software Engineering",
         "school": "University of Turku",
-        "location": "New York, NY",
+        "location": "Turku",
         "period": "2025 - 2027",
         "status": "In Progress",
         "gpa": "3.5 / 5",
         "description": "Focused on software development, database management, and system analysis.",
         "courses": [
           {
-            "name": "Data Structures",
-            "link": "https://en.wikipedia.org/wiki/Data_structure"
+            "name": "Design & Architecture",
+            "link": "https://en.wikipedia.org/wiki/Software_design"
           },
           {
-            "name": "Software Engineering",
-            "link": "https://en.wikipedia.org/wiki/Software_engineering"
-          },
-          {
-            "name": "Database Systems",
-            "link": "https://en.wikipedia.org/wiki/Database"
-          },
-          {
-            "name": "Web Development",
-            "link": "https://developer.mozilla.org/docs/Learn"
+            "name": "Agile Methods",
+            "link": "https://en.wikipedia.org/wiki/Agile_software_development"
           }
         ]
       },
       {
-        "degree": "M.Sc. in Industrial Engineering and Management",
-        "school": "Engineering Institute",
+        "degree": "M.Sc. in Tech",
+        "major": "Industrial Engineering and Management",
+        "school": "Tampere University",
         "location": "Boston, MA",
         "period": "2022 - 2026",
         "status": "In Progress",
@@ -261,7 +255,8 @@
         ]
       },
       {
-        "degree": "B.Sc. in Information Technology",
+        "degree": "B.Sc. in Tech",
+        "major": "Information Technology",
         "school": "University of Turku",
         "location": "Turku, Finland",
         "period": "2022 - 2025",
