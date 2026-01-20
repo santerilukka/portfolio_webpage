@@ -1,6 +1,0 @@
-export * from './education'
-export * from './projects'
-export * from './certificates'
-export * from './work'
-export * from './tech'
-export * from './aboutme'
