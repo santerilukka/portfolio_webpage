@@ -1,23 +1,32 @@
 import React from 'react'
 import { Button } from '../ui/button'
 import { Separator } from '../ui/separator'
-import { Github, Linkedin, Twitter, Mail, Heart } from 'lucide-react'
+import { Github, Linkedin, Mail, Heart } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+
+type FooterQuickLink = { label: string; href: string }
+type FooterSocialLink = {
+  type: 'github' | 'linkedin' | 'email'
+  label: string
+  href: string
+}
+
+const socialIconByType: Record<FooterSocialLink['type'], React.ElementType> = {
+  github: Github,
+  linkedin: Linkedin,
+  email: Mail,
+}
 
 export function Footer() {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
-  const footerLinks = [
-    { label: 'About', href: '#about' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Education', href: '#education' },
-    { label: 'Contact', href: '#contact' },
-  ]
-
-  const socialLinks = [
-    { icon: Github, href: 'https://github.com', label: 'GitHub' },
-    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-    { icon: Mail, href: 'mailto:.@email.com', label: 'Email' },
-  ]
+  const footerLinks = t('footer.quickLinks', {
+    returnObjects: true,
+  }) as FooterQuickLink[]
+  const socialLinks = t('footer.socialLinks', {
+    returnObjects: true,
+  }) as FooterSocialLink[]
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId.substring(1))
@@ -32,36 +41,45 @@ export function Footer() {
           <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             {/* About Section */}
             <div className='space-y-4'>
-              <h3 className='text-lg font-medium'>Santeri Lukka</h3>
+              <h3 className='text-lg font-medium'>{t('footer.brandName')}</h3>
               <p className='text-sm text-muted-foreground max-w-xs'>
-                Computer Science student passionate about creating innovative
-                digital solutions and learning new technologies.
+                {t('footer.aboutBlurb')}
               </p>
+
               <div className='flex space-x-2'>
-                {socialLinks.map((social, index) => (
-                  <Button
-                    key={index}
-                    variant='ghost'
-                    size='sm'
-                    asChild
-                    className='h-8 w-8 p-0'
-                  >
-                    <a
-                      href={social.href}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      aria-label={social.label}
+                {socialLinks.map((social, index) => {
+                  const Icon = socialIconByType[social.type]
+                  return (
+                    <Button
+                      key={`${social.type}-${index}`}
+                      variant='ghost'
+                      size='sm'
+                      asChild
+                      className='h-8 w-8 p-0'
                     >
-                      <social.icon className='h-4 w-4' />
-                    </a>
-                  </Button>
-                ))}
+                      <a
+                        href={social.href}
+                        target={social.type === 'email' ? undefined : '_blank'}
+                        rel={
+                          social.type === 'email'
+                            ? undefined
+                            : 'noopener noreferrer'
+                        }
+                        aria-label={social.label}
+                      >
+                        <Icon className='h-4 w-4' />
+                      </a>
+                    </Button>
+                  )
+                })}
               </div>
             </div>
 
             {/* Quick Links */}
             <div className='space-y-4'>
-              <h3 className='text-lg font-medium'>Quick Links</h3>
+              <h3 className='text-lg font-medium'>
+                {t('footer.quickLinksTitle')}
+              </h3>
               <nav className='flex flex-col space-y-2'>
                 {footerLinks.map((link, index) => (
                   <button
@@ -77,15 +95,22 @@ export function Footer() {
 
             {/* Contact Info */}
             <div className='space-y-4'>
-              <h3 className='text-lg font-medium'>Get In Touch</h3>
+              <h3 className='text-lg font-medium'>
+                {t('footer.contactTitle')}
+              </h3>
               <div className='space-y-2 text-sm text-muted-foreground'>
-                <p>@email.com</p>
-                <p>+0 (555) 123-4567</p>
-                <p>City, State, COUNTRY</p>
+                {/*<p>{t('footer.contact.email')}</p>
+                <p>{t('footer.contact.phone')}</p>
+                <p>{t('footer.contact.location')}</p>*/}
+                <p>Contact me through my socials!</p>
               </div>
+              {/*
               <Button variant='outline' size='sm' asChild>
-                <a href='#contact'>Contact Me</a>
+                <a href={t('footer.contact.ctaHref')}>
+                  {t('footer.contact.ctaLabel')}
+                </a>
               </Button>
+              */}
             </div>
           </div>
         </div>
@@ -97,17 +122,17 @@ export function Footer() {
           <div className='flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0'>
             <div className='flex items-center space-x-1 text-sm text-muted-foreground'>
               <span>
-                © {currentYear} Santeri Lukka. Made with Figma, React and{' '}
+                {t('footer.bottom.copyrightPrefix', { year: currentYear })}{' '}
               </span>
               <Heart className='h-3 w-3 text-red-500 fill-current' />
             </div>
 
             <div className='flex items-center space-x-4 text-sm text-muted-foreground'>
               <a href='#' className='hover:text-primary transition-colors'>
-                Privacy Policy
+                {t('footer.bottom.privacyPolicy')}
               </a>
               <a href='#' className='hover:text-primary transition-colors'>
-                Terms of Service
+                {t('footer.bottom.termsOfService')}
               </a>
             </div>
           </div>
@@ -118,7 +143,7 @@ export function Footer() {
           <Button
             variant='outline'
             size='sm'
-            aria-label='Back to top'
+            aria-label={t('footer.backToTopAriaLabel')}
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             className='fixed bottom-4 right-4 z-50 h-10 w-10 rounded-full p-0'
           >

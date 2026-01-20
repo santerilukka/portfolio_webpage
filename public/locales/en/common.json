@@ -59,6 +59,13 @@
       "Management"
     ]
   },
+  "languageSelect": {
+    "ariaLabel": "Language",
+    "languages": {
+      "en": "English",
+      "fi": "Suomi"
+    }
+  },
   "languages": ["English", "Finnish", "Swedish"],
   "currentWork": {
     "title": "Currently Working On",
@@ -477,5 +484,38 @@
         "stack": ["JavaFX", "GUI", "UI/UX"]
       }
     ]
+  },
+  "footer": {
+    "brandName": "Santeri Lukka",
+    "aboutBlurb": "Passionate about technology, continuous learning, and building impactful solutions",
+    "quickLinksTitle": "Quick Links",
+    "quickLinks": [
+      { "label": "About", "href": "#about" },
+      { "label": "Projects", "href": "#projects" },
+      { "label": "Education", "href": "#education" }
+    ],
+    "contactTitle": "Get In Touch",
+    "contact": {
+      "email": "firstname.lastname [[at]] gmail.com",
+      "phone": "+0 (555) 123-4567",
+      "location": "City, State, COUNTRY",
+      "ctaLabel": "Contact Me",
+      "ctaHref": "#contact"
+    },
+    "socialLinks": [
+      { "type": "github", "label": "GitHub", "href": "https://github.com" },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://linkedin.com"
+      },
+      { "type": "email", "label": "Email", "href": "mailto:.@email.com" }
+    ],
+    "bottom": {
+      "copyrightPrefix": "© {{year}} Santeri Lukka. Made with React, Tailwind CSS and",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service"
+    },
+    "backToTopAriaLabel": "Back to top"
   }
 }
