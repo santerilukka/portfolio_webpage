@@ -47,9 +47,9 @@
     ],
     "strengthsTitle": "Strengths",
     "stats": {
-      "technologies": "Technologies Learned",
-      "yearsLearning": "Years of Learning",
-      "projectsBuilt": "Projects Built"
+      "technologies": "Tech Skills",
+      "yearsLearning": "Masters Studies",
+      "projectsBuilt": "Personal Projects"
     },
     "skills": [
       "Problem Solving",
