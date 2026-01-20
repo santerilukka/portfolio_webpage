@@ -20,21 +20,6 @@ export function CurrentlyWorkingOn({
 
   const Inner = (
     <>
-      <motion.div
-        className='text-center mb-16'
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
-      >
-        <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-          {t('currentWork.title')}
-        </h2>
-        <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-          {t('currentWork.subtitle')}
-        </p>
-      </motion.div>
-
       <div className='grid md:grid-cols-3 gap-6 mb-12'>
         {aboutHighlights.map((highlight, index) => (
           <motion.div
