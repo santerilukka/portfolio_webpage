@@ -2534,6 +2534,20 @@
     }
   }
 
+  /* Explicit spacing between Education (col 1) and Certificates (col 2) */
+  @media (width >= 64rem) {
+    .tertiary-grid {
+      column-gap: calc(var(--spacing) * 16); /* 4rem */
+    }
+  }
+
+  /* Explicit spacing between TechStack (col 1) and CurrentlyWorkingOn (col 2) */
+  @media (width >= 64rem) {
+    .secondary-grid {
+      column-gap: calc(var(--spacing) * 16); /* 4rem */
+    }
+  }
+
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
