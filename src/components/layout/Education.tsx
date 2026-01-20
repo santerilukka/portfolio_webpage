@@ -48,9 +48,6 @@ export default function Education({
         <h2 className='text-3xl md:text-4xl font-medium mb-4'>
           {t('education.title')}
         </h2>
-        <p className='text-lg text-muted-foreground max-w-3xl mx-auto'>
-          {t('education.subtitle')}
-        </p>
       </motion.div>
 
       <div className='grid lg:grid-cols-2 xl:grid-cols-3 gap-8'>

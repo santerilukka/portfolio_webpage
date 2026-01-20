@@ -20,7 +20,7 @@ function ScrollCta({ onClick }: { onClick: () => void }) {
       type='button'
       onClick={onClick}
       aria-label={t('landing.scrollCta.ariaLabel')}
-      className='absolute bottom-2 pt-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
+      className='absolute bottom-6 pt-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-6 group focus:outline-none'
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: 0.8, ease: 'easeOut' }}
@@ -57,7 +57,7 @@ export function Landing() {
 
         {/* Below hero: About */}
         <motion.div
-          className='mt-10'
+          className='mt-14 md:mt-16'
           initial={{ opacity: 0, y: 18 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
@@ -70,7 +70,7 @@ export function Landing() {
 
         {/* CTAs below About */}
         <motion.div
-          className='mt-10 flex flex-col sm:flex-row gap-4 justify-center items-center'
+          className='mt-16 md:mt-20 flex flex-col sm:flex-row gap-6 md:gap-8 justify-center items-center'
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.55, delay: 0.55 }}
@@ -79,7 +79,7 @@ export function Landing() {
             <Button
               size='lg'
               onClick={goToNext}
-              className='text-base px-8 py-6'
+              className='text-base px-8 py-8'
             >
               {t('hero.cta.primary')}
               <ArrowDown className='ml-2 h-4 w-4' />
@@ -91,7 +91,7 @@ export function Landing() {
               variant='outline'
               size='lg'
               asChild
-              className='text-base px-8 py-6'
+              className='text-base px-8 py-8'
             >
               <a href='#contact'>{t('hero.cta.secondary')}</a>
             </Button>

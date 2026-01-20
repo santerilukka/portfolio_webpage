@@ -37,7 +37,7 @@
   "about": {
     "available": "Available for opportunities",
     "title": "About Me",
-    "description": "I'm a dedicated student pursuing IT and IEM. My journey combines both technical knowledge about the huge world of Information Tehcnology with business and management aspects. I'm committed to life long learning and growth in the tech world.",
+    "description": "Driven by a passion for technology and thriving in collaborative team environments. Always open to new opportunities and eager to contribute to exciting projects that make a difference.",
     "highlights": [
       {
         "title": "Background",
@@ -55,7 +55,8 @@
     "strengthsTitle": "Strengths",
     "stats": {
       "technologies": "Technologies Learned",
-      "yearsLearning": "Years of Learning"
+      "yearsLearning": "Years of Learning",
+      "projectsBuilt": "Projects Built"
     },
     "skills": [
       "Problem Solving",

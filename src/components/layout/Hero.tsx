@@ -12,7 +12,7 @@ function HeroText() {
 
   return (
     <motion.div
-      className='w-full text-center lg:text-left space-y-5'
+      className='w-full text-center lg:text-left space-y-20 md:space-y-20'
       {...fadeInLeft}
       transition={{ duration: 0.7, ease: 'easeOut' }}
       aria-label={t('hero.ariaLabel')}
@@ -27,7 +27,7 @@ function HeroText() {
       </motion.h1>
 
       <motion.p
-        className='text-xl md:text-2xl text-muted-foreground'
+        className='text-xl md:text-2xl text-muted-foreground leading-relaxed'
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.28 }}

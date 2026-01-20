@@ -46,9 +46,6 @@ export function Certificates({
         <h2 className='text-3xl md:text-4xl font-medium mb-4'>
           {t('certificates.title')}
         </h2>
-        <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-          {t('certificates.subtitle')}
-        </p>
       </div>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
@@ -131,6 +128,8 @@ export function Certificates({
         ))}
       </div>
 
+      {/* Cert stats - to be enabled later
+      
       <div className='mt-16 text-center'>
         <div className='grid grid-cols-2 md:grid-cols-4 gap-8'>
           <div>
@@ -166,7 +165,7 @@ export function Certificates({
             </div>
           </div>
         </div>
-      </div>
+      </div>*/}
     </>
   )
 
