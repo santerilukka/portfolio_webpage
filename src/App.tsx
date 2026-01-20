@@ -8,43 +8,6 @@ import { Projects } from './components/layout/Projects'
 import { Contact } from './components/layout/Contact'
 import { Footer } from './components/layout/Footer'
 import ClickSpark from './components/ui/effects/ClickSparkEffect'
-/*
-
-return (
-    <ClickSpark
-      sparkColor='#3d72e6'
-      sparkSize={10}
-      sparkRadius={15}
-      sparkCount={10}
-      duration={450}
-      extraScale={1.2}
-    >
-      <div className='min-h-screen bg-background text-foreground'>
-        {/* Navigation /*}
-        <Navigation />
-
-        {/* Main Content /*}
-        <main>
-          <Hero />
-          <AboutMe />
-          <TechStack />
-          <Education />
-          <Certificates />
-          <Projects />
-          <CurrentlyWorkingOn />
-          <Contact />
-        </main>
-
-        {/* Footer /*}
-        <Footer />
-
-        {/* Toast Notifications /*}
-        <Toaster />
-      </div>
-    </ClickSpark>
-  )
-
-*/
 
 export default function App() {
   useEffect(() => {
@@ -57,8 +20,11 @@ export default function App() {
     }
   }, [])
 
-  //return <p>Under maintanance!</p>
-  return (
+  return (<p>Under maintanance!</p>) }
+  
+  
+  
+  {/* return (
     <ClickSpark
       sparkColor='#3d72e6'
       sparkSize={10}
@@ -76,12 +42,12 @@ export default function App() {
           <Tertiary />
           <Projects />
           {/*<Contact />*/}
-        </main>
+          </main>
 
-        <Footer />
-
-        <Toaster />
-      </div>
-    </ClickSpark>
-  )
-}
+          <Footer />
+  
+          <Toaster />
+        </div>
+      </ClickSpark>
+    ) */} 
+    
