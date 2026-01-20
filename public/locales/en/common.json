@@ -3,16 +3,13 @@
     "title": "Portfolio"
   },
   "nav": {
-    "items": [
-      "Home",
-      "About",
-      "Tech Stack",
-      "Education",
-      "Certificates",
-      "Projects",
-      "Currently",
-      "Contact"
-    ]
+    "labels": {
+      "home": "Home",
+      "about": "About",
+      "more": "More",
+      "projects": "Projects",
+      "contact": "Contact"
+    }
   },
   "languageSelect": {
     "ariaLabel": "Language",

@@ -135,22 +135,13 @@ export function Navigation() {
 
   const { t } = useTranslation()
 
-  const navLabelList = t('nav.items', { returnObjects: true }) as string[]
-  const navSectionIds = [
-    'hero',
-    'about',
-    'tech-stack',
-    'education',
-    'certificates',
-    'projects',
-    'current-work',
-    'contact',
-  ] as const
-
-  const navItems: NavItem[] = navSectionIds.map((id, idx) => ({
-    id,
-    label: navLabelList[idx] ?? '',
-  }))
+  const navItems: NavItem[] = [
+    { id: 'hero', label: t('nav.labels.home') },
+    { id: 'tech-stack', label: t('nav.labels.about') },
+    { id: 'education', label: t('nav.labels.more') },
+    { id: 'projects', label: t('nav.labels.projects') },
+    { id: 'contact', label: t('nav.labels.contact') },
+  ]
 
   const scrollToSection = (sectionId: string) => {
     const el = document.getElementById(sectionId)
