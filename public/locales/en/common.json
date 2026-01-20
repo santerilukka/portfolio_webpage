@@ -343,7 +343,7 @@
     "cta": {
       "text": "Want to see more of my work?",
       "button": "View All on GitHub",
-      "githubUrl": "https://github.com"
+      "githubUrl": "https://github.com/santerilukka"
     },
     "items": [
       {
@@ -503,11 +503,15 @@
       "ctaHref": "#contact"
     },
     "socialLinks": [
-      { "type": "github", "label": "GitHub", "href": "https://github.com" },
+      {
+        "type": "github",
+        "label": "GitHub",
+        "href": "https://github.com/santerilukka"
+      },
       {
         "type": "linkedin",
         "label": "LinkedIn",
-        "href": "https://linkedin.com"
+        "href": "https://linkedin.com/in/santerilukka"
       },
       { "type": "email", "label": "Email", "href": "mailto:.@email.com" }
     ],
