@@ -6,10 +6,15 @@ import { Badge } from '../ui/badge'
 import { ExternalLink, Github, Eye } from 'lucide-react'
 import { ImageWithFallback } from '../figma/ImageWithFallback'
 
+import portfolioWebsite from '../../assets/project_pics/portfolioWebsite.png'
+import figmaUI from '../../assets/project_pics/figmaUI.png'
+import dataVisualizer from '../../assets/project_pics/dataVisualizer.png'
+
 type ProjectI18n = {
   title: string
   description: string
-  image: string
+  imageKey?: string
+  image?: string
   technologies: string[]
   liveLink?: string
   githubLink?: string
@@ -24,6 +29,12 @@ export function Projects() {
   const otherProjects = projects.filter((p) => !p.featured)
 
   const githubUrl = t('projects.cta.githubUrl') as string
+
+  const projectImageMap: Record<string, string> = {
+    portfolioWebsite: portfolioWebsite,
+    figmaUI: figmaUI,
+    dataVisualizer: dataVisualizer,
+  }
 
   return (
     <section id='projects' className='py-20 bg-secondary/20'>
@@ -51,7 +62,11 @@ export function Projects() {
               >
                 <div className='relative overflow-hidden'>
                   <ImageWithFallback
-                    src={project.image}
+                    src={
+                      (project.imageKey && projectImageMap[project.imageKey]) ||
+                      project.image ||
+                      ''
+                    }
                     alt={project.title}
                     className='w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300'
                   />
@@ -141,7 +156,7 @@ export function Projects() {
         </div>
 
         {/* Other Projects */}
-        <div>
+        {/*<div>
           <h3 className='text-2xl font-medium mb-8'>
             {t('projects.otherTitle')}
           </h3>
@@ -211,6 +226,7 @@ export function Projects() {
             ))}
           </div>
         </div>
+        */}
 
         {/* Call to Action */}
         <div className='text-center mt-16'>
