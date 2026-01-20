@@ -8,7 +8,7 @@ type LinkedinButtonProps = {
 }
 
 export function LinkedinButton({
-  href = 'https://linkedin.com',
+  href = 'https://linkedin.com/in/santerilukka',
   className,
 }: LinkedinButtonProps) {
   return (

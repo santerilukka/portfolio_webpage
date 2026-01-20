@@ -8,7 +8,7 @@ type GithubButtonProps = {
 }
 
 export function GithubButton({
-  href = 'https://github.com',
+  href = 'https://github.com/santerilukka',
   className,
 }: GithubButtonProps) {
   return (
