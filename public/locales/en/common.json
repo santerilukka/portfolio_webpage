@@ -166,6 +166,15 @@
         "link": "https://www.figma.com/"
       }
     ],
+    "toolsMenu": {
+      "title": "Tools",
+      "items": [
+        { "name": "Microsoft Word" },
+        { "name": "Microsoft Excel" },
+        { "name": "Microsoft PowerPoint" },
+        { "name": "Microsoft Teams" }
+      ]
+    },
     "stats": {
       "technologies": {
         "label": "Technologies",

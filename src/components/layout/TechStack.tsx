@@ -3,6 +3,9 @@ import CountUp from '../ui/effects/CountUpEffect.tsx'
 import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { Badge } from '../ui/badge'
+import { Button } from '../ui/button'
+import { Card } from '../ui/card'
+import { ChevronDown } from 'lucide-react'
 
 type TechStackProps = {
   asSection?: boolean
@@ -52,6 +55,17 @@ export function TechStack({
 
   const skills = t('about.skills', { returnObjects: true }) as string[]
 
+  const [toolsOpen, setToolsOpen] = useState(false)
+
+  type ToolMenuItem = { name: string; link?: string }
+
+  const toolMenuItems = t('tech.toolsMenu.items', {
+    returnObjects: true,
+  }) as ToolMenuItem[]
+
+  const isNonEmptyString = (v: unknown): v is string =>
+    typeof v === 'string' && v.trim().length > 0
+
   useEffect(() => {
     pausedRef.current = isHovering
   }, [isHovering])
@@ -78,7 +92,7 @@ export function TechStack({
       window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReduced) return
 
-    const speed = 0.6
+    const speed = 0.8
     const tick = () => {
       if (!pausedRef.current && !offscreenRef.current) {
         scrollPosRef.current += speed
@@ -101,9 +115,6 @@ export function TechStack({
         <h2 className='text-3xl md:text-4xl font-medium mb-4'>
           {t('tech.title')}
         </h2>
-        <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-          {t('tech.subtitle')}
-        </p>
       </div>
 
       <div className='relative overflow-hidden'>
@@ -112,7 +123,7 @@ export function TechStack({
 
         <div
           ref={scrollRef}
-          className='flex space-x-8 overflow-x-hidden select-none'
+          className='flex space-x-4 overflow-x-hidden select-none'
           style={{
             width: 'calc(100% + 40px)',
             marginLeft: '-20px',
@@ -131,8 +142,8 @@ export function TechStack({
               target='_blank'
               rel='noopener noreferrer'
               aria-label={tech.name}
-              className='flex-shrink-0 flex flex-col items-center space-y-3 p-6 bg-card border border-border rounded-lg hover:shadow-md transition-shadow group focus:outline-none focus-visible:ring-2 focus-visible:ring-ring'
-              style={{ minWidth: '150px' }}
+              className='flex-shrink-0 flex flex-col items-center space-y-2 p-4 bg-card border border-border rounded-lg hover:shadow-md transition-shadow group focus:outline-none focus-visible:ring-2 focus-visible:ring-ring'
+              style={{ minWidth: '100px' }}
             >
               <div className='text-3xl group-hover:scale-110 transition-transform'>
                 {tech.icon}
@@ -147,7 +158,59 @@ export function TechStack({
         </div>
       </div>
 
-      {/* Strengths / Skills (moved here from CurrentlyWorkingOn) */}
+      {/* Tools dropdown menu */}
+      <div className='mt-8 mb-8 flex flex-col items-center'>
+        <Button
+          type='button'
+          variant='outline'
+          onClick={() => setToolsOpen((v) => !v)}
+          aria-expanded={toolsOpen}
+          aria-controls='tech-tools-menu'
+          className='gap-2 text-lg md:text-base'
+        >
+          {t('tech.toolsMenu.title')}
+          <ChevronDown
+            className={`h-4 w-4 transition-transform ${
+              toolsOpen ? 'rotate-180' : ''
+            }`}
+          />
+        </Button>
+
+        {toolsOpen && (
+          <Card
+            id='tech-tools-menu'
+            className='mt-4 w-full max-w-3xl p-4 bg-secondary/20'
+          >
+            <div className='flex flex-wrap justify-center gap-2'>
+              {toolMenuItems.map((item) => {
+                const hasLink = isNonEmptyString(item.link)
+                return (
+                  <Badge
+                    key={item.name}
+                    asChild={hasLink}
+                    variant='secondary'
+                    className='text-sm py-2 px-4'
+                  >
+                    {hasLink ? (
+                      <a
+                        href={item.link}
+                        target='_blank'
+                        rel='noopener noreferrer'
+                      >
+                        {item.name}
+                      </a>
+                    ) : (
+                      <span>{item.name}</span>
+                    )}
+                  </Badge>
+                )
+              })}
+            </div>
+          </Card>
+        )}
+      </div>
+
+      {/* Strengths / Skills */}
       <motion.div
         className='text-center mt-12'
         initial={{ opacity: 0, y: 20 }}
@@ -155,10 +218,7 @@ export function TechStack({
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
       >
-        <h3 className='text-2xl md:text-3xl font-medium mb-6'>
-          {t('about.strengthsTitle')}
-        </h3>
-        <div className='flex flex-wrap justify-center gap-3'>
+        <div className='flex flex-wrap justify-center gap-4'>
           {skills.map((skill) => (
             <Badge
               key={skill}
