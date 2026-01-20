@@ -20,34 +20,5 @@ export default function App() {
     }
   }, [])
 
-  return (<p>Under maintanance!</p>) }
-  
-  
-  
-  {/* return (
-    <ClickSpark
-      sparkColor='#3d72e6'
-      sparkSize={10}
-      sparkRadius={15}
-      sparkCount={10}
-      duration={450}
-      extraScale={1.2}
-    >
-      <div className='min-h-screen bg-background text-foreground'>
-        <Navigation />
-
-        <main>
-          <Landing />
-          <Secondary />
-          <Tertiary />
-          <Projects />
-          {/*<Contact />*/}
-          </main>
-
-          <Footer />
-  
-          <Toaster />
-        </div>
-      </ClickSpark>
-    ) */} 
-    
+  return <p>Under maintanance!</p>
+}
