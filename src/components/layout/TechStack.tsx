@@ -55,6 +55,15 @@ export function TechStack({
 
   const skills = t('about.skills', { returnObjects: true }) as string[]
 
+  // Languages (robust i18n read)
+  const languagesRaw = t('tech.languages', { returnObjects: true }) as unknown
+
+  const languages: string[] = Array.isArray(languagesRaw)
+    ? languagesRaw.filter(
+        (v): v is string => typeof v === 'string' && v.trim().length > 0
+      )
+    : ['English', 'Finnish', 'Swedish']
+
   const [toolsOpen, setToolsOpen] = useState(false)
 
   type ToolMenuItem = { name: string; link?: string }
@@ -226,6 +235,27 @@ export function TechStack({
               className='text-sm py-2 px-4'
             >
               {skill}
+            </Badge>
+          ))}
+        </div>
+      </motion.div>
+
+      {/* Languages */}
+      <motion.div
+        className='text-center mt-12 pt-6'
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <div className='flex flex-wrap justify-center gap-3'>
+          {languages.slice(0, 3).map((lang) => (
+            <Badge
+              key={lang}
+              variant='secondary'
+              className='text-sm py-2 px-4 bg-accent-bg text-accent-bg-foreground border border-accent-bg/20 hover:opacity-90'
+            >
+              {lang}
             </Badge>
           ))}
         </div>

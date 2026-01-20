@@ -49,16 +49,8 @@ export function CurrentlyWorkingOn({
 
   const Inner = (
     <>
-      <div className='text-center mb-16'>
-        <h2 className='text-3xl md:text-4xl font-medium mb-4'>
-          {t('currentWork.title')}
-        </h2>
-        <p className='text-lg text-muted-foreground max-w-2xl mx-auto'>
-          {t('currentWork.subtitle')}
-        </p>
-      </div>
-
-      <div className='grid md:grid-cols-3 gap-6 mb-12'>
+      {/* Background interests / approach cards FIRST */}
+      <div className='grid md:grid-cols-3 gap- mb-16'>
         {highlights.map((highlight, index) => {
           const Icon = highlightIconMap[highlight.icon]
           return (
@@ -69,10 +61,10 @@ export function CurrentlyWorkingOn({
               transition={{ duration: 0.6, delay: index * 0.12 }}
               viewport={{ once: true }}
             >
-              <Card className='p-6 h-full hover:shadow-md transition-shadow'>
+              <Card className='p-3 h-full hover:shadow-md transition-shadow'>
                 <div className='flex flex-col items-center text-center space-y-3'>
                   <div className='p-3 bg-primary/10 rounded-full'>
-                    <Icon className='h-6 w-6 text-primary' />
+                    <Icon className='h-5 w-5 text-primary' />
                   </div>
 
                   <h3 className='font-medium'>{highlight.title}</h3>
@@ -86,7 +78,14 @@ export function CurrentlyWorkingOn({
         })}
       </div>
 
-      <div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>
+      {/* Header AFTER */}
+      <div className='text-center mb-8'>
+        <h3 className='text-2xl md:text-3xl font-medium mt-4'>
+          {t('currentWork.title')}
+        </h3>
+      </div>
+
+      <div className='grid gap-2 md:grid-cols-2 lg:grid-cols-3'>
         {items.map((item, i) => (
           <motion.div
             key={`${item.title}-${i}`}
@@ -95,7 +94,7 @@ export function CurrentlyWorkingOn({
             transition={{ duration: 0.5, delay: i * 0.1 }}
             viewport={{ once: true }}
           >
-            <Card className='p-6 h-full flex flex-col justify-between hover:shadow-md transition-shadow'>
+            <Card className='p-4 h-full flex flex-col justify-between hover:shadow-md transition-shadow'>
               <div>
                 <div className='flex items-start justify-between mb-3'>
                   <h3 className='font-medium leading-snug'>{item.title}</h3>

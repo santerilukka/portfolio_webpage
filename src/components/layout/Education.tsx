@@ -65,10 +65,14 @@ export default function Education({
                   <GraduationCap className='w-8 h-8 text-primary flex-shrink-0 mt-1' />
                   {edu.status && (
                     <Badge
+                      className={`ml-2 ${
+                        edu.status === 'Completed'
+                          ? 'bg-accent-bg text-accent-bg-foreground hover:bg-accent-bg/90'
+                          : ''
+                      }`}
                       variant={
                         edu.status === 'Completed' ? 'default' : 'secondary'
                       }
-                      className='ml-2'
                     >
                       {edu.status}
                     </Badge>

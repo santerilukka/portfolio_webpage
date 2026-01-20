@@ -539,6 +539,16 @@
     container: card-header / inline-size;
   }
 
+  .bg-accent-bg {
+    background-color: var(--accent-bg);
+  }
+  .text-accent-bg-foreground {
+    color: var(--accent-bg-foreground);
+  }
+  .border-accent-bg\/20 {
+    border-color: color-mix(in oklab, var(--accent-bg) 20%, transparent);
+  }
+
   .pointer-events-none {
     pointer-events: none;
   }
@@ -5234,6 +5244,8 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+  --accent-bg: #3d72e6;
+  --accent-bg-foreground: #ffffff;
 }
 
 .dark {
@@ -5271,6 +5283,8 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+  --accent-bg: #052e85;
+  --accent-bg-foreground: #ffffff;
 }
 
 html {
