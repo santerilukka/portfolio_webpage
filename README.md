@@ -1,11 +1,29 @@
+# Personal Website
 
-  # Professional Portfolio Website
+A responsive, multilingual portfolio website built with React + TypeScript + Vite, styled with Tailwind CSS, and animated with Framer Motion. Content is managed via i18next locale JSON files.
 
-  This is a code bundle for Professional Portfolio Website. The original project is available at https://www.figma.com/design/3in7yFm4GH9WXRDyyEFaAW/Professional-Portfolio-Website.
+The site includes dark/light theme toggle, responsive navigation with action buttons (socials' links, language selector, theme switch), and multilingual content. Styling with subtle UI motion and UI/section-level animations.
 
-  ## Running the code
+## Tech Stack
 
-  Run `npm i` to install the dependencies.
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+- i18next / react-i18next
+- Radix UI primitives (UI components in ui)
 
-  Run `npm run dev` to start the development server.
-  
+## Project Structure
+
+- App entry: App.tsx
+- Bootstrap: main.tsx
+- Global styles: index.css
+- Sections/layout
+- Reusable UI
+- Translations: common.json
+
+## Deployment
+
+- Live at https://santerilukka.com
+
+Configured for Vercel with output directory build via vercel.json.
