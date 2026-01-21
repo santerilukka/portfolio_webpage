@@ -144,10 +144,19 @@ export function Navigation() {
   ]
 
   const scrollToSection = (sectionId: string) => {
+    if (sectionId === 'contact') {
+      window.open(
+        'https://linkedin.com/in/santerilukka',
+        '_blank',
+        'noopener,noreferrer'
+      )
+      setIsMenuOpen(false)
+      return
+    }
+
     const el = document.getElementById(sectionId)
     el?.scrollIntoView({ behavior: 'smooth' })
     setIsMenuOpen(false)
-    setActiveSection(sectionId)
   }
 
   useEffect(() => {
