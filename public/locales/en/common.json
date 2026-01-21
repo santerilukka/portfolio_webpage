@@ -51,13 +51,7 @@
       "projectsBuilt": "Personal Projects",
       "technologies": "Technologies"
     },
-    "skills": [
-      "Problem Solving",
-      "Team Collaboration",
-      "Continuous Learning",
-      "Innovation",
-      "Management"
-    ]
+    "skills": ["Problem Solving", "Team Collaboration", "Continuous Learning"]
   },
   "languageSelect": {
     "ariaLabel": "Language",
@@ -159,21 +153,21 @@
         "icon": "⬆️",
         "color": "text-black",
         "link": "https://vercel.com/"
-      },
-      {
-        "name": "Figma",
-        "icon": "🎨",
-        "color": "text-purple-600",
-        "link": "https://www.figma.com/"
       }
     ],
     "toolsMenu": {
-      "title": "Tools",
+      "title": "Tools   ",
       "items": [
-        { "name": "Microsoft Word" },
-        { "name": "Microsoft Excel" },
-        { "name": "Microsoft PowerPoint" },
-        { "name": "Microsoft Teams" }
+        { "name": "Word" },
+        { "name": "Excel" },
+        { "name": "PowerPoint" },
+        { "name": "Teams" },
+        { "name": "Figma" },
+        { "name": "Gimp" },
+        { "name": "VS Code" },
+        { "name": "IntelliJ IDEA" },
+        { "name": "Postman" },
+        { "name": "GitHub/-Lab" }
       ]
     },
     "stats": {
