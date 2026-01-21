@@ -93,7 +93,9 @@ export function Landing() {
               asChild
               className='text-base px-8 py-8'
             >
-              <a href='#contact'>{t('hero.cta.secondary')}</a>
+              <a href='https://linkedin.com/in/santerilukka'>
+                {t('hero.cta.secondary')}
+              </a>
             </Button>
           </motion.div>
         </motion.div>

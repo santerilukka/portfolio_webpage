@@ -215,15 +215,23 @@
         "period": "2025 - 2027",
         "status": "In Progress",
         "gpa": "3.5 / 5",
-        "description": "Focused on software development, database management, and system analysis.",
+        "description": "Strong technical, problem-solving, and teamwork skills to design innovative and sustainable digital solutions.",
         "courses": [
           {
             "name": "Design & Architecture",
             "link": "https://en.wikipedia.org/wiki/Software_design"
           },
           {
-            "name": "Agile Methods",
-            "link": "https://en.wikipedia.org/wiki/Agile_software_development"
+            "name": "K&I Mngmnt",
+            "link": "https://en.wikipedia.org/wiki/Knowledge_management"
+          },
+          {
+            "name": "Enterprice Architecture",
+            "link": "https://en.wikipedia.org/wiki/Enterprise_architecture"
+          },
+          {
+            "name": "Modern User Interfaces",
+            "link": "https://en.wikipedia.org/wiki/Graphical_user_interface"
           }
         ]
       },
@@ -263,23 +271,27 @@
         "period": "2022 - 2025",
         "status": "Completed",
         "gpa": "4 / 5",
-        "description": "Focused on software development, database management, and system analysis.",
+        "description": "Multidisciplinary, and working-life foundation for future digital technology opportunities.",
         "courses": [
           {
-            "name": "Data Structures",
+            "name": "DSA",
             "link": "https://en.wikipedia.org/wiki/Data_structure"
           },
           {
-            "name": "Software Engineering",
-            "link": "https://en.wikipedia.org/wiki/Software_engineering"
+            "name": "OOP",
+            "link": "https://en.wikipedia.org/wiki/Object-oriented_programming"
           },
           {
-            "name": "Database Systems",
-            "link": "https://en.wikipedia.org/wiki/Database"
+            "name": "Cyber Security",
+            "link": "https://en.wikipedia.org/wiki/Cybersecurity"
           },
           {
-            "name": "Web Development",
-            "link": "https://developer.mozilla.org/docs/Learn"
+            "name": "AI methods",
+            "link": "https://en.wikipedia.org/wiki/Artificial_intelligence"
+          },
+          {
+            "name": "Communication Skills",
+            "link": "https://en.wikipedia.org/wiki/Communication"
           }
         ]
       }
@@ -494,7 +506,7 @@
       "phone": "+0 (555) 123-4567",
       "location": "City, State, COUNTRY",
       "ctaLabel": "Contact Me",
-      "ctaHref": "#contact"
+      "ctaHref": "https://linkedin.com/in/santerilukka"
     },
     "socialLinks": [
       {
