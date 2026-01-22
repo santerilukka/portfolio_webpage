@@ -8,15 +8,15 @@
       "about": "Tietoa",
       "more": "Lisää",
       "projects": "Projektit",
-      "contact": "Yhteys"
+      "contact": "Ota yhteyttä"
     }
   },
   "hero": {
     "ariaLabel": "Esittely",
     "name": "Santeri Lukka",
-    "subtitle": "24-vuotias IT- ja IEM-yliopisto-opiskelija",
+    "subtitle": "24-vuotias IT&IEM yliopisto-opiskelija",
     "cta": {
-      "primary": "Katso työni",
+      "primary": "Katso lisää",
       "secondary": "Ota yhteyttä"
     }
   },
@@ -24,43 +24,21 @@
     "ariaLabel": "Hero-osio",
     "scrollCta": {
       "ariaLabel": "Vieritä seuraavaan osioon",
-      "label": "Vieritä alas"
+      "label": "Scrollaa alas"
     }
   },
   "about": {
     "available": "Avoinna mahdollisuuksille",
     "title": "Tietoa minusta",
-    "description": "Teknologiasta innostunut ja tiimityössä viihtyvä tekijä. Olen aina avoin uusille mahdollisuuksille ja haluan olla mukana projekteissa, joilla on merkitystä.",
-    "highlights": [
-      {
-        "title": "Tausta",
-        "description": "teknologian, johtamisen ja liiketoimintaopintojen parissa",
-        "icon": "sparkles"
-      },
-      {
-        "title": "Kiinnostuksen kohteet",
-        "description": "ohjelmistotuotanto, IS/IT-johtaminen, yritysstrategia",
-        "icon": "target"
-      },
-      {
-        "title": "Lähestymistapa",
-        "description": "jatkuva oppiminen ja ongelmanratkaisu uteliaisuuden ohjaamana",
-        "icon": "rocket"
-      }
-    ],
+    "description": "Teknologiasta syttyvä tiimipelaaja, joka tarttuu uusiin mahdollisuuksiin hyvällä otteella. Rakennan ratkaisuja, jotka yhdistävät teknologian ja liiketoiminnan, ja pyrin jatkuvasti laajentamaan osaamistani nopeasti muuttuvassa digitaalisessa maailmassa.",
+    "highlights": [],
     "strengthsTitle": "Vahvuudet",
     "stats": {
-      "technologies": "Opitut teknologiat",
-      "yearsLearning": "Oppimisvuodet",
-      "projectsBuilt": "Rakennetut projektit"
+      "technologies": "Tekniikka",
+      "yearsLearning": "DI-opinnot",
+      "projectsBuilt": "Projektit"
     },
-    "skills": [
-      "Ongelmanratkaisu",
-      "Tiimityö",
-      "Jatkuva oppiminen",
-      "Innovointi",
-      "Johtaminen"
-    ]
+    "skills": ["Ongelmanratkaisu", "Tiimityö", "Jatkuva oppiminen"]
   },
   "languageSelect": {
     "ariaLabel": "Kieli",
@@ -76,7 +54,7 @@
     "highlights": [
       {
         "title": "Tausta",
-        "description": "teknologian, johtamisen ja liiketoimintaopintojen parissa",
+        "description": "tekniikan, johtamisen ja liiketoimintaopintojen parissa",
         "icon": "sparkles"
       },
       {
@@ -86,7 +64,7 @@
       },
       {
         "title": "Lähestymistapa",
-        "description": "jatkuva oppiminen ja ongelmanratkaisu uteliaisuuden ohjaamana",
+        "description": "uteliaisuudella jatkuvaan oppimiseen ja ongelmanratkaisuun",
         "icon": "rocket"
       }
     ],
@@ -196,49 +174,49 @@
         "icon": "⬆️",
         "color": "text-black",
         "link": "https://vercel.com/"
-      },
-      {
-        "name": "Figma",
-        "icon": "🎨",
-        "color": "text-purple-600",
-        "link": "https://www.figma.com/"
       }
     ],
     "toolsMenu": {
       "title": "Työkalut",
       "items": [
-        { "name": "Microsoft Word" },
-        { "name": "Microsoft Excel" },
-        { "name": "Microsoft PowerPoint" },
-        { "name": "Microsoft Teams" }
+        { "name": "Word" },
+        { "name": "Excel" },
+        { "name": "PowerPoint" },
+        { "name": "Teams" },
+        { "name": "Figma" },
+        { "name": "Gimp" },
+        { "name": "VS Code" },
+        { "name": "IntelliJ IDEA" },
+        { "name": "Postman" },
+        { "name": "GitHub/-Lab" }
       ]
     },
     "stats": {
       "technologies": {
-        "label": "Teknologiat",
+        "label": "Teknologioita ja työkaluja",
         "from": 10,
-        "to": 15,
+        "to": 20,
         "duration": 0.2,
         "suffix": "+"
       },
       "yearsLearning": {
-        "label": "Oppimisvuodet",
+        "label": "Vuosia",
         "from": 0,
-        "to": 3,
+        "to": 4,
         "duration": 0.4,
         "suffix": "+"
       },
-      "projectsBuilt": {
-        "label": "Rakennetut projektit",
+      "opintopiste": {
+        "label": "Opintopisteitä",
         "from": 0,
-        "to": 20,
+        "to": 220,
         "duration": 0.6,
         "suffix": "+"
       },
-      "certifications": {
-        "label": "Sertifikaatit",
+      "projectsBuilt": {
+        "label": "",
         "from": 0,
-        "to": 5,
+        "to": 4,
         "duration": 0.8,
         "suffix": "+"
       }
@@ -251,7 +229,7 @@
     "keyCourses": "Keskeiset kurssit",
     "items": [
       {
-        "degree": "DI / IT",
+        "degree": "DI",
         "major": "Ohjelmistotekniikka",
         "school": "Turun yliopisto",
         "location": "Turku",
@@ -261,18 +239,26 @@
         "description": "Painotus ohjelmistokehitykseen, tietokantoihin ja järjestelmäanalyysiin.",
         "courses": [
           {
-            "name": "Suunnittelu ja arkkitehtuuri",
+            "name": "Design & Architecture",
             "link": "https://en.wikipedia.org/wiki/Software_design"
           },
           {
-            "name": "Agile-menetelmät",
-            "link": "https://en.wikipedia.org/wiki/Agile_software_development"
+            "name": "K&I Mngmnt",
+            "link": "https://en.wikipedia.org/wiki/Knowledge_management"
+          },
+          {
+            "name": "Enterprice Architecture",
+            "link": "https://en.wikipedia.org/wiki/Enterprise_architecture"
+          },
+          {
+            "name": "Modern User Interfaces",
+            "link": "https://en.wikipedia.org/wiki/Graphical_user_interface"
           }
         ]
       },
       {
         "degree": "DI",
-        "major": "Teollisuustalous ja johtaminen",
+        "major": "Tuotantotalous",
         "school": "Tampereen yliopisto",
         "location": "Boston, MA",
         "period": "2022 - 2026",
@@ -281,20 +267,20 @@
         "description": "Erikoistuminen prosessien optimointiin, laadunhallintaan ja projektijohtamiseen.",
         "courses": [
           {
-            "name": "Operaatioanalyysi",
-            "link": "https://en.wikipedia.org/wiki/Operations_research"
+            "name": "Johdon laskentatoimi",
+            "link": "https://fi.wikipedia.org/wiki/Johdon_laskentatoimi"
           },
           {
-            "name": "Laadunhallinta",
-            "link": "https://en.wikipedia.org/wiki/Quality_management"
+            "name": "Yrityksen talous",
+            "link": "https://fi.wikipedia.org/wiki/Yrityksen_talous"
           },
           {
-            "name": "Toimitusketju",
-            "link": "https://en.wikipedia.org/wiki/Supply_chain_management"
+            "name": "Projektinhallinta",
+            "link": "https://fi.wikipedia.org/wiki/Projektinhallinta"
           },
           {
-            "name": "Tilastotiede",
-            "link": "https://en.wikipedia.org/wiki/Statistics"
+            "name": "Laatujohtaminen",
+            "link": "https://fi.wikipedia.org/wiki/Laatujohtaminen"
           }
         ]
       },
@@ -304,25 +290,25 @@
         "school": "Turun yliopisto",
         "location": "Turku, Suomi",
         "period": "2022 - 2025",
-        "status": "Valmistunut",
+        "status": "Completed",
         "gpa": "4 / 5",
         "description": "Painotus ohjelmistokehitykseen, tietokantoihin ja järjestelmäanalyysiin.",
         "courses": [
           {
-            "name": "Tietorakenteet",
-            "link": "https://en.wikipedia.org/wiki/Data_structure"
+            "name": "Tietorakenteet ja algoritmit",
+            "link": "https://fi.wikipedia.org/wiki/Tietorakenteet_ja_algoritmit"
           },
           {
             "name": "Ohjelmistotuotanto",
-            "link": "https://en.wikipedia.org/wiki/Software_engineering"
+            "link": "https://fi.wikipedia.org/wiki/Ohjelmistotuotanto"
           },
           {
             "name": "Tietokannat",
-            "link": "https://en.wikipedia.org/wiki/Database"
+            "link": "https://fi.wikipedia.org/wiki/Tietokanta"
           },
           {
             "name": "Web-kehitys",
-            "link": "https://developer.mozilla.org/docs/Learn"
+            "link": "https://fi.wikipedia.org/wiki/Web-kehitys"
           }
         ]
       }

@@ -246,20 +246,20 @@
         "description": "Specializing in process optimization, quality control, and project management.",
         "courses": [
           {
-            "name": "Operations Research",
-            "link": "https://en.wikipedia.org/wiki/Operations_research"
+            "name": "Management Accounting",
+            "link": "https://en.wikipedia.org/wiki/Management_accounting"
+          },
+          {
+            "name": "Business Economics",
+            "link": "https://en.wikipedia.org/wiki/Business_economics"
+          },
+          {
+            "name": "Project Management",
+            "link": "https://en.wikipedia.org/wiki/Project_management"
           },
           {
             "name": "Quality Management",
             "link": "https://en.wikipedia.org/wiki/Quality_management"
-          },
-          {
-            "name": "Supply Chain",
-            "link": "https://en.wikipedia.org/wiki/Supply_chain_management"
-          },
-          {
-            "name": "Statistics",
-            "link": "https://en.wikipedia.org/wiki/Statistics"
           }
         ]
       },
