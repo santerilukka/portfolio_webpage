@@ -15,11 +15,18 @@ const STORAGE_KEY = 'lang'
 export function LanguageSelect() {
   const { i18n, t } = useTranslation()
 
-  const value: 'en' | 'fi' = i18n.language?.toLowerCase().startsWith('fi')
-    ? 'fi'
-    : 'en'
+  type Lang = 'en' | 'fi' | 'sv'
 
-  const setLanguage = (lng: 'en' | 'fi') => {
+  const resolveLang = (): Lang => {
+    const lang = i18n.language?.toLowerCase()
+    if (lang?.startsWith('fi')) return 'fi'
+    if (lang?.startsWith('sv')) return 'sv'
+    return 'en'
+  }
+
+  const value = resolveLang()
+
+  const setLanguage = (lng: Lang) => {
     i18n.changeLanguage(lng)
     document.documentElement.lang = lng
     try {
@@ -30,7 +37,7 @@ export function LanguageSelect() {
   }
 
   return (
-    <Select value={value} onValueChange={(v) => setLanguage(v as 'en' | 'fi')}>
+    <Select value={value} onValueChange={(v) => setLanguage(v as Lang)}>
       <SelectTrigger
         aria-label={t('languageSelect.ariaLabel')}
         className='h-9 w-9 p-0 justify-center'
@@ -43,6 +50,7 @@ export function LanguageSelect() {
       <SelectContent align='end'>
         <SelectItem value='en'>{t('languageSelect.languages.en')}</SelectItem>
         <SelectItem value='fi'>{t('languageSelect.languages.fi')}</SelectItem>
+        <SelectItem value='sv'>{t('languageSelect.languages.sv')}</SelectItem>
       </SelectContent>
     </Select>
   )

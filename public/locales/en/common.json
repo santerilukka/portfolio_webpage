@@ -57,7 +57,8 @@
     "ariaLabel": "Language",
     "languages": {
       "en": "English",
-      "fi": "Suomi"
+      "fi": "Suomi",
+      "sv": "Svenska"
     }
   },
   "languages": ["English", "Finnish", "Swedish"],

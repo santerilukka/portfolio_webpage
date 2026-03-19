@@ -11,7 +11,7 @@ i18n
     // Always default to English unless user explicitly changes it
     lng: 'en',
     fallbackLng: 'en',
-    supportedLngs: ['en', 'fi'],
+    supportedLngs: ['en', 'fi', 'sv'],
     ns: ['common'],
     defaultNS: 'common',
 

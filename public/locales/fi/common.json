@@ -31,7 +31,20 @@
     "available": "Avoinna mahdollisuuksille",
     "title": "Tietoa minusta",
     "description": "Tiimipelaaja, joka tarttuu uusiin mahdollisuuksiin hyvällä otteella. Etsin mahdollisuuksia, jotka yhdistävät teknologian ja liiketoiminnan, ja pyrin jatkuvasti laajentamaan osaamistani nopeasti muuttuvassa digitaalisessa maailmassa.",
-    "highlights": [],
+    "highlights": [
+      {
+        "title": "Tausta",
+        "description": "tekniikan, johtamisen ja liiketoimintaopintojen parissa"
+      },
+      {
+        "title": "Kiinnostuksen kohteet",
+        "description": "ohjelmistotuotanto, IS/IT-johtaminen, yritysstrategia"
+      },
+      {
+        "title": "Lähestymistapa",
+        "description": "uteliaisuudella jatkuvaan oppimiseen ja ongelmanratkaisuun"
+      }
+    ],
     "strengthsTitle": "Vahvuudet",
     "stats": {
       "technologies": "Tekniikka",
@@ -44,7 +57,8 @@
     "ariaLabel": "Kieli",
     "languages": {
       "en": "English",
-      "fi": "Suomi"
+      "fi": "Suomi",
+      "sv": "Svenska"
     }
   },
   "languages": ["Englanti", "Suomi", "Ruotsi"],
@@ -206,7 +220,7 @@
         "duration": 0.4,
         "suffix": "+"
       },
-      "opintopiste": {
+      "ECTs": {
         "label": "Opintopisteitä",
         "from": 0,
         "to": 220,
@@ -214,7 +228,7 @@
         "suffix": "+"
       },
       "projectsBuilt": {
-        "label": "",
+        "label": "Rakennettuja projekteja",
         "from": 0,
         "to": 4,
         "duration": 0.8,
@@ -290,25 +304,29 @@
         "school": "Turun yliopisto",
         "location": "Turku, Suomi",
         "period": "2022 - 2025",
-        "status": "Completed",
+        "status": "Valmis",
         "gpa": "4 / 5",
-        "description": "Painotus ohjelmistokehitykseen, tietokantoihin ja järjestelmäanalyysiin.",
+        "description": "Monipuolinen ja työelämälähtöinen pohja tulevaisuuden digitaaliteknologian mahdollisuuksille.",
         "courses": [
           {
             "name": "Tietorakenteet ja algoritmit",
-            "link": "https://fi.wikipedia.org/wiki/Tietorakenteet_ja_algoritmit"
+            "link": "https://fi.wikipedia.org/wiki/Tietorakenne"
           },
           {
-            "name": "Ohjelmistotuotanto",
-            "link": "https://fi.wikipedia.org/wiki/Ohjelmistotuotanto"
+            "name": "OOP",
+            "link": "https://fi.wikipedia.org/wiki/Olio-ohjelmointi"
           },
           {
-            "name": "Tietokannat",
-            "link": "https://fi.wikipedia.org/wiki/Tietokanta"
+            "name": "Kyberturvallisuus",
+            "link": "https://fi.wikipedia.org/wiki/Kyberturvallisuus"
           },
           {
-            "name": "Web-kehitys",
-            "link": "https://fi.wikipedia.org/wiki/Web-kehitys"
+            "name": "Tekoälymenetelmät",
+            "link": "https://fi.wikipedia.org/wiki/Tekoäly"
+          },
+          {
+            "name": "Viestintätaidot",
+            "link": "https://fi.wikipedia.org/wiki/Viestintä"
           }
         ]
       }
@@ -366,7 +384,7 @@
     "cta": {
       "text": "Haluatko nähdä lisää töitäni?",
       "button": "Näytä kaikki GitHubissa",
-      "githubUrl": "https://github.com"
+      "githubUrl": "https://github.com/santerilukka"
     },
     "items": [
       {
@@ -492,14 +510,18 @@
       "phone": "+0 (555) 123-4567",
       "location": "Kaupunki, Osavaltio, MAA",
       "ctaLabel": "Ota yhteyttä",
-      "ctaHref": "#contact"
+      "ctaHref": "https://linkedin.com/in/santerilukka"
     },
     "socialLinks": [
-      { "type": "github", "label": "GitHub", "href": "https://github.com" },
+      {
+        "type": "github",
+        "label": "GitHub",
+        "href": "https://github.com/santerilukka"
+      },
       {
         "type": "linkedin",
         "label": "LinkedIn",
-        "href": "https://linkedin.com"
+        "href": "https://linkedin.com/in/santerilukka"
       },
       { "type": "email", "label": "Sähköposti", "href": "mailto:.@email.com" }
     ],

@@ -37,6 +37,9 @@ coverage/
 .junit/
 .tap/
 
+# Claude Code
+CLAUDE.md
+
 # Misc
 *.local
 *.swp

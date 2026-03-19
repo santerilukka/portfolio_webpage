@@ -1,0 +1,531 @@
+{
+  "app": {
+    "title": "Portfolio"
+  },
+  "nav": {
+    "labels": {
+      "home": "Hem",
+      "about": "Om",
+      "more": "Mer",
+      "projects": "Projekt",
+      "contact": "Kontakt"
+    }
+  },
+  "hero": {
+    "ariaLabel": "Introduktion",
+    "name": "Santeri Lukka",
+    "subtitle": "24-årig IT & IEM universitetsstudent",
+    "cta": {
+      "primary": "Se mitt arbete",
+      "secondary": "Kontakta mig"
+    }
+  },
+  "landing": {
+    "ariaLabel": "Hjältesektion",
+    "scrollCta": {
+      "ariaLabel": "Scrolla till nästa sektion",
+      "label": "Scrolla ner"
+    }
+  },
+  "about": {
+    "available": "Tillgänglig för möjligheter",
+    "title": "Om mig",
+    "description": "Driven av en passion för teknik och trivs i samarbetsinriktade teammiljöer. Alltid öppen för nya möjligheter och ivrig att bidra till spännande projekt som gör skillnad.",
+    "highlights": [
+      {
+        "title": "Bakgrund",
+        "description": "inom teknik, ledarskap och företagsekonomi"
+      },
+      {
+        "title": "Intressen",
+        "description": "inom mjukvaruutveckling, IS/IT-ledning, företagsstrategi"
+      },
+      {
+        "title": "Tillvägagångssätt",
+        "description": "av kontinuerligt lärande och problemlösning driven av nyfikenhet"
+      }
+    ],
+    "strengthsTitle": "Styrkor",
+    "stats": {
+      "yearsLearning": "Masterstudier",
+      "projectsBuilt": "Personliga projekt",
+      "technologies": "Teknik"
+    },
+    "skills": ["Problemlösning", "Teamsamarbete", "Kontinuerligt lärande"]
+  },
+  "languageSelect": {
+    "ariaLabel": "Språk",
+    "languages": {
+      "en": "English",
+      "fi": "Suomi",
+      "sv": "Svenska"
+    }
+  },
+  "languages": ["Engelska", "Finska", "Svenska"],
+  "currentWork": {
+    "title": "Arbetar för närvarande med",
+    "subtitle": "Aktiva fokusområden, lärandeinitiativ och pågående projekt.",
+    "highlights": [
+      {
+        "title": "Bakgrund",
+        "description": "inom teknik, ledarskap och företagsekonomi",
+        "icon": "sparkles"
+      },
+      {
+        "title": "Intressen",
+        "description": "inom mjukvaruutveckling, IS/IT-ledning, företagsstrategi",
+        "icon": "target"
+      },
+      {
+        "title": "Tillvägagångssätt",
+        "description": "av kontinuerligt lärande och problemlösning driven av nyfikenhet",
+        "icon": "rocket"
+      }
+    ],
+    "items": [
+      {
+        "title": "Personlig webbplatsförnyelse",
+        "description": "Denna webbplats ombyggd med webbteknologier",
+        "stack": ["React", "TypeScript", "Vite", "Tailwind CSS"]
+      },
+      {
+        "title": "Enterprice Architecture",
+        "description": "Kurs fokuserad på företagsarkitekturer för företag",
+        "stack": ["ITIL", "TOGAF", "EIRA"]
+      },
+      {
+        "title": "Modern User Interfaces",
+        "description": "Masterkurs i moderna användargränssnitt",
+        "stack": ["JavaFX", "GUI", "UI/UX"]
+      }
+    ]
+  },
+  "tech": {
+    "title": "Teknikstack",
+    "subtitle": "Teknologier och verktyg jag arbetar med för att förverkliga idéer",
+    "carouselAria": "Kontinuerligt rullande lista med teknologier",
+    "technologies": [
+      {
+        "name": "React",
+        "icon": "⚛️",
+        "color": "text-blue-500",
+        "link": "https://react.dev/"
+      },
+      {
+        "name": "TypeScript",
+        "icon": "🔷",
+        "color": "text-blue-600",
+        "link": "https://www.typescriptlang.org/"
+      },
+      {
+        "name": "Node.js",
+        "icon": "🟢",
+        "color": "text-green-500",
+        "link": "https://nodejs.org/"
+      },
+      {
+        "name": "Python",
+        "icon": "🐍",
+        "color": "text-yellow-500",
+        "link": "https://www.python.org/"
+      },
+      {
+        "name": "JavaScript",
+        "icon": "🟨",
+        "color": "text-yellow-400",
+        "link": "https://developer.mozilla.org/docs/Web/JavaScript"
+      },
+      {
+        "name": "Vite",
+        "icon": "⚡",
+        "color": "text-purple-500",
+        "link": "https://vitejs.dev/"
+      },
+      {
+        "name": "Tailwind CSS",
+        "icon": "🎨",
+        "color": "text-cyan-500",
+        "link": "https://tailwindcss.com/"
+      },
+      {
+        "name": "Git",
+        "icon": "📁",
+        "color": "text-orange-500",
+        "link": "https://git-scm.com/"
+      },
+      {
+        "name": "MongoDB",
+        "icon": "🍃",
+        "color": "text-green-600",
+        "link": "https://www.mongodb.com/"
+      },
+      {
+        "name": "Next.js",
+        "icon": "▲",
+        "color": "text-gray-800 dark:text-white",
+        "link": "https://nextjs.org/"
+      },
+      {
+        "name": "Express",
+        "icon": "🚀",
+        "color": "text-gray-600",
+        "link": "https://expressjs.com/"
+      },
+      {
+        "name": "Java",
+        "icon": "☕",
+        "color": "text-red-600",
+        "link": "https://www.java.com/"
+      },
+      {
+        "name": "SQLite",
+        "icon": "🗄️",
+        "color": "text-blue-700",
+        "link": "https://www.sqlite.org/"
+      },
+      {
+        "name": "Vercel",
+        "icon": "⬆️",
+        "color": "text-black",
+        "link": "https://vercel.com/"
+      }
+    ],
+    "toolsMenu": {
+      "title": "Verktyg",
+      "items": [
+        { "name": "Word" },
+        { "name": "Excel" },
+        { "name": "PowerPoint" },
+        { "name": "Teams" },
+        { "name": "Figma" },
+        { "name": "Gimp" },
+        { "name": "VS Code" },
+        { "name": "IntelliJ IDEA" },
+        { "name": "Postman" },
+        { "name": "GitHub/-Lab" }
+      ]
+    },
+    "stats": {
+      "technologies": {
+        "label": "Teknologier och verktyg",
+        "from": 10,
+        "to": 20,
+        "duration": 0.2,
+        "suffix": "+"
+      },
+      "yearsLearning": {
+        "label": "År av lärande",
+        "from": 0,
+        "to": 4,
+        "duration": 0.4,
+        "suffix": "+"
+      },
+      "ECTs": {
+        "label": "Studiepoäng",
+        "from": 0,
+        "to": 220,
+        "duration": 0.6,
+        "suffix": "+"
+      },
+      "projectsBuilt": {
+        "label": "Byggda projekt",
+        "from": 0,
+        "to": 4,
+        "duration": 0.8,
+        "suffix": "+"
+      }
+    }
+  },
+  "education": {
+    "title": "Utbildning",
+    "subtitle": "Min akademiska resa och kontinuerliga lärande",
+    "gpaLabel": "Medelbetyg",
+    "keyCourses": "Nyckelkurser",
+    "items": [
+      {
+        "degree": "M.Sc. i teknik / IT",
+        "major": "Mjukvaruutveckling",
+        "school": "Åbo universitet",
+        "location": "Åbo",
+        "period": "2025 - 2027",
+        "status": "Pågående",
+        "gpa": "3.5 / 5",
+        "description": "Starka tekniska kunskaper, problemlösning och teamarbete för att utforma innovativa och hållbara digitala lösningar.",
+        "courses": [
+          {
+            "name": "Design & Architecture",
+            "link": "https://en.wikipedia.org/wiki/Software_design"
+          },
+          {
+            "name": "K&I Mngmnt",
+            "link": "https://en.wikipedia.org/wiki/Knowledge_management"
+          },
+          {
+            "name": "Enterprice Architecture",
+            "link": "https://en.wikipedia.org/wiki/Enterprise_architecture"
+          },
+          {
+            "name": "Modern User Interfaces",
+            "link": "https://en.wikipedia.org/wiki/Graphical_user_interface"
+          }
+        ]
+      },
+      {
+        "degree": "M.Sc. i teknik",
+        "major": "Industriell ekonomi och organisation",
+        "school": "Tammerfors universitet",
+        "location": "Boston, MA",
+        "period": "2022 - 2026",
+        "status": "Pågående",
+        "gpa": "3.7/4.0",
+        "description": "Specialisering inom processoptimering, kvalitetsstyrning och projektledning.",
+        "courses": [
+          {
+            "name": "Ekonomistyrning",
+            "link": "https://sv.wikipedia.org/wiki/Ekonomistyrning"
+          },
+          {
+            "name": "Företagsekonomi",
+            "link": "https://sv.wikipedia.org/wiki/Företagsekonomi"
+          },
+          {
+            "name": "Projektledning",
+            "link": "https://sv.wikipedia.org/wiki/Projektledning"
+          },
+          {
+            "name": "Kvalitetsstyrning",
+            "link": "https://sv.wikipedia.org/wiki/Kvalitetsstyrning"
+          }
+        ]
+      },
+      {
+        "degree": "Kandidat i teknik",
+        "major": "Informationsteknik",
+        "school": "Åbo universitet",
+        "location": "Åbo, Finland",
+        "period": "2022 - 2025",
+        "status": "Avslutad",
+        "gpa": "4 / 5",
+        "description": "Tvärvetenskaplig och arbetslivsinriktad grund för framtida möjligheter inom digital teknik.",
+        "courses": [
+          {
+            "name": "Datastrukturer och algoritmer",
+            "link": "https://sv.wikipedia.org/wiki/Datastruktur"
+          },
+          {
+            "name": "OOP",
+            "link": "https://sv.wikipedia.org/wiki/Objektorienterad_programmering"
+          },
+          {
+            "name": "Cybersäkerhet",
+            "link": "https://sv.wikipedia.org/wiki/Datasäkerhet"
+          },
+          {
+            "name": "AI-metoder",
+            "link": "https://sv.wikipedia.org/wiki/Artificiell_intelligens"
+          },
+          {
+            "name": "Kommunikationsfärdigheter",
+            "link": "https://sv.wikipedia.org/wiki/Kommunikation"
+          }
+        ]
+      }
+    ]
+  },
+  "certificates": {
+    "title": "Certifikat",
+    "subtitle": "Professionella certifieringar och prestationer som validerar mina kunskaper och färdigheter",
+    "credentialId": "Referens-ID",
+    "skillsCovered": "Täckta färdigheter",
+    "view": "Visa certifikat",
+    "items": [
+      {
+        "title": "Full Stack Web Development",
+        "issuer": "MOOC, Helsingfors universitet",
+        "date": "2/2025",
+        "credentialId": "FCC-11111",
+        "status": "Aktiv",
+        "skills": ["JavaScript", "React", "Node.js", "HTML/CSS", "MongoDB"],
+        "link": "#"
+      },
+      {
+        "title": "Grundcertifikat i projektledning",
+        "issuer": "Projektiammattilaiset PRY",
+        "date": "12/2023",
+        "credentialId": "GH-22222",
+        "status": "Aktiv",
+        "skills": ["Projektledning", "IPMA"],
+        "link": "#"
+      }
+    ],
+    "stats": {
+      "earned": { "value": "6", "label": "Intjänade certifikat" },
+      "platforms": { "value": "4", "label": "Stora plattformar" },
+      "validated": { "value": "18+", "label": "Validerade färdigheter" },
+      "active": { "value": "100%", "label": "Aktiv status" }
+    }
+  },
+  "projects": {
+    "title": "Projekt",
+    "subtitle": "En samling projekt som visar mina färdigheter och passion för utveckling",
+    "featuredTitle": "Projekt",
+    "otherTitle": "Övriga projekt",
+    "badges": {
+      "featured": "Utvalt"
+    },
+    "links": {
+      "live": "Live",
+      "code": "Kod",
+      "liveDemo": "Livedemo",
+      "github": "GitHub",
+      "liveAria": "Öppna liveprojekt",
+      "githubAria": "Öppna GitHub-repositorium"
+    },
+    "cta": {
+      "text": "Vill du se mer av mitt arbete?",
+      "button": "Visa allt på GitHub",
+      "githubUrl": "https://github.com/santerilukka"
+    },
+    "items": [
+      {
+        "title": "Denna webbplats du läser",
+        "description": "En personlig portfoliowebbplats byggd för att visa mina projekt, färdigheter och erfarenhet med modern och responsiv design.",
+        "imageKey": "portfolioWebsite",
+        "technologies": [
+          "React",
+          "Node.js",
+          "PostgreSQL",
+          "Stripe",
+          "Tailwind CSS"
+        ],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "UI till inköpslisteapp",
+        "description": "Applikations-UI som låter användare hantera sina inköpslistor. Gjord med Figma som en del av UI/UX-kurs på universitetet.",
+        "imageKey": "figmaUI",
+        "technologies": ["Figma", "UI/UX"],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Data Analytics Dashboard",
+        "description": "En interaktiv instrumentpanel för visualisering av JSON/CSV-data (t.ex. affärsmått och KPI:er) med olika diagram (stapel, linje, cirkel).",
+        "imageKey": "dataVisualizer",
+        "technologies": ["JavaFX", "MVC", "CSV/JSON-parsing", "Charts"],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": true
+      },
+      {
+        "title": "Portfoliowebbplats",
+        "description": "Denna responsiva portfoliowebbplats som visar mina projekt, färdigheter och erfarenhet med moderna designprinciper.",
+        "imageKey": "portfolioSite",
+        "technologies": [
+          "React",
+          "TypeScript",
+          "Tailwind CSS",
+          "Framer Motion"
+        ],
+        "liveLink": "#",
+        "githubLink": "#",
+        "featured": false
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakta mig",
+    "subtitle": "Jag är alltid öppen för att diskutera nya möjligheter, samarbeten eller bara prata om teknik",
+    "formTitle": "Skicka ett meddelande",
+    "form": {
+      "name": { "label": "Namn", "placeholder": "Ditt namn" },
+      "email": {
+        "label": "E-post",
+        "placeholder": "din.epost@example.com"
+      },
+      "subject": { "label": "Ämne", "placeholder": "Vad gäller det?" },
+      "message": {
+        "label": "Meddelande",
+        "placeholder": "Berätta om ditt projekt eller säg bara hej!"
+      },
+      "submit": "Skicka meddelande",
+      "toastSuccess": "Meddelandet skickat! Jag återkommer snart."
+    },
+    "infoTitle": "Kontaktinformation",
+    "connectTitle": "Följ mig",
+    "contactInfo": [
+      {
+        "type": "email",
+        "label": "E-post",
+        "value": "@email.com",
+        "link": "mailto:@email.com"
+      },
+      {
+        "type": "phone",
+        "label": "Telefon",
+        "value": "+1 (555) 123-4567",
+        "link": "tel:+15551234567"
+      },
+      { "type": "location", "label": "Plats", "value": "City, State, USA" }
+    ],
+    "socialLinks": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "link": "https://github.com/santerilukka",
+        "username": "@santerilukka"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "link": "https://linkedin.com/in/santerilukka",
+        "username": "/in/santerilukka"
+      }
+    ],
+    "quickResponse": {
+      "title": "Snabbt svar",
+      "description": "Jag svarar vanligtvis på meddelanden inom 24 timmar. För brådskande ärenden, kontakta mig via telefon eller LinkedIn.",
+      "indicator": "Svarar vanligtvis inom en dag"
+    }
+  },
+  "footer": {
+    "brandName": "Santeri Lukka",
+    "aboutBlurb": "Passionerad om teknik, kontinuerligt lärande och att bygga lösningar som gör skillnad",
+    "quickLinksTitle": "Snabblänkar",
+    "quickLinks": [
+      { "label": "Om", "href": "#about" },
+      { "label": "Projekt", "href": "#projects" },
+      { "label": "Utbildning", "href": "#education" }
+    ],
+    "contactTitle": "Kontakta mig",
+    "contact": {
+      "email": "firstname.lastname [[at]] gmail.com",
+      "phone": "+0 (555) 123-4567",
+      "location": "City, State, COUNTRY",
+      "ctaLabel": "Kontakta mig",
+      "ctaHref": "https://linkedin.com/in/santerilukka"
+    },
+    "socialLinks": [
+      {
+        "type": "github",
+        "label": "GitHub",
+        "href": "https://github.com/santerilukka"
+      },
+      {
+        "type": "linkedin",
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/santerilukka"
+      },
+      { "type": "email", "label": "E-post", "href": "mailto:.@email.com" }
+    ],
+    "bottom": {
+      "copyrightPrefix": "© {{year}} Santeri Lukka. Byggd med React, Tailwind CSS och",
+      "privacyPolicy": "Integritetspolicy",
+      "termsOfService": "Användarvillkor"
+    },
+    "backToTopAriaLabel": "Tillbaka till toppen"
+  }
+}
